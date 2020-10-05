@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/radon-h2020/radon-tosca-metrics.svg?token=5ombixLKK1T1YhFSj8KX&branch=master)](https://travis-ci.com/radon-h2020/radon-tosca-metrics)
-
+![lgtm](https://img.shields.io/lgtm/grade/python/github/radon-h2020/radon-tosca-metrics)
 
 # Tosca metrics
 A python module that provides metrics for TOSCA blueprints and definitions.
