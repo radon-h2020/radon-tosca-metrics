@@ -8,7 +8,7 @@ class CDCT(BlueprintMetric):
         '''Function which counts the number of custom defined capability types''' 
         try:
             cd_capability_types = self.getyml.get('capability_types')
-            if cd_capability_types == None:
+            if not cd_capability_types:
                 return 0
             return len(cd_capability_types)
 
