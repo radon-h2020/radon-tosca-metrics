@@ -1,4 +1,11 @@
+![Build](https://github.com/radon-h2020/radon-tosca-metrics/workflows/Build/badge.svg)
+![Documentation](https://github.com/radon-h2020/radon-tosca-metrics/workflows/Documentation/badge.svg)
 ![lgtm](https://img.shields.io/lgtm/grade/python/github/radon-h2020/radon-tosca-metrics)
+![Total alerts](https://img.shields.io/lgtm/alerts/github/radon-h2020/radon-tosca-metrics)
+![pypi-version](https://img.shields.io/pypi/v/tosca-metrics)
+![pypi-status](https://img.shields.io/pypi/status/tosca-metrics)
+![release-date](https://img.shields.io/github/release-date/radon-h2020/radon-tosca-metrics)
+
 
 # Tosca metrics
 A python module that provides metrics for TOSCA blueprints and definitions.
