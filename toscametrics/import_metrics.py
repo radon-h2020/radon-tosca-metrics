@@ -17,11 +17,9 @@ from toscametrics.metrics.nif import NIF
 from toscametrics.metrics.ninp import NINP
 from toscametrics.metrics.ninpc import NINPC
 from toscametrics.metrics.nn import NN
-from toscametrics.metrics.nnt import NNT
 from toscametrics.metrics.nout import NOUT
 from toscametrics.metrics.np import NP
 from toscametrics.metrics.nr import NR
-from toscametrics.metrics.nrt import NRT
 from toscametrics.metrics.ttb import TTB
 from toscametrics.metrics.cdnt import CDNT
 from toscametrics.metrics.cdrt import CDRT
@@ -37,16 +35,22 @@ from toscametrics.metrics.nrq import NRQ
 from toscametrics.metrics.nsh import NSH
 from toscametrics.metrics.ncys import NCYS
 from toscametrics.metrics.tob import TOB
-from toscametrics.metrics.ngc import NGC
-from toscametrics.metrics.ngp import NGP
 from toscametrics.metrics.ngro import NGRO
 from toscametrics.metrics.npol import NPOL
 from toscametrics.metrics.nf import NF
+from toscametrics.metrics.td import TD
+from toscametrics.metrics.au import AU
+from toscametrics.metrics.nac import NAC
+from toscametrics.metrics.nfunc import NFUNC
+from toscametrics.metrics.noam import NOAM
+from toscametrics.metrics.nop import NOP
+from toscametrics.metrics.ntri import NTRI
+from toscametrics.metrics.tett import TETT
 
 
 general_metrics = {
     'loc'   :   LOC, 
-    'bloc'  :   BLOC, 
+    'bloc'  :   BLOC,
     'cloc'  :   CLOC,
     'dpt'   :   DPT,
     'etp'   :   ETP,
@@ -58,17 +62,15 @@ general_metrics = {
 
 tosca_metrics = {
     'na'    :   NA,
-    #'nc'    :   NC,
-    #'ni'    :   NI,
-    #'nif'   :   NIF,
+    'nc'    :   NC,
+    'ni'    :   NI,
+    'nif'   :   NIF,
     'ninp'  :   NINP,
     'ninpc' :   NINPC,
-    #'nn'    :   NN,
-    #'nnt'   :   NNT,
-    #'nout'  :   NOUT,
-    #'np'    :   NP,
-    #'nr'    :   NR,
-    #'nrt'   :   NRT,
+    'nn'    :   NN,
+    'nout'  :   NOUT,
+    'np'    :   NP,
+    'nr'    :   NR,
     #'ttb'   :   TTB,
     'cdnt'  :   CDNT,
     'cdrt'  :   CDRT,
@@ -82,11 +84,17 @@ tosca_metrics = {
     #'tdb'   :   TDB,
     'nrq'   :   NRQ,
     'nsh'   :   NSH,
-    #'ncys'  :   NCYS,
+    'ncys'  :   NCYS,
     #'tob'   :   TOB,
-    'ngc'   :   NGC,
-    'ngp'   :   NGP,
     'ngro'  :   NGRO,
     'npol'  :   NPOL,
-    'nf'    :   NF
+    'nf'    :   NF,
+    #'td'    :   TD,
+    'au'    :   AU,
+    'nac'   :   NAC,
+    'nfunc' :   NFUNC,
+    'noam'  :   NOAM,
+    'nop'   :   NOP,
+    'ntri'  :   NTRI,
+    'tett'  :   TETT
     }

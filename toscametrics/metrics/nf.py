@@ -1,5 +1,4 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
-from toscaparser.tosca_template import ToscaTemplate
 from toscametrics.utils import keyValueList
 
 class NF(BlueprintMetric):

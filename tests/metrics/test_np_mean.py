@@ -13,10 +13,10 @@ yaml_13_1 = 'tosca_definitions_version: tosca_simple_yaml_1_0\ndescription: Temp
 
 @parameterized_class([
    { 'yaml': yaml_0_1, 'expected': 0},
-   { 'yaml': yaml_5_1, 'expected': 2.5},
-   { 'yaml': yaml_5_2, 'expected': 2.5},
-   { 'yaml': yaml_5_3, 'expected': 1.6666666666666667},
-   { 'yaml': yaml_13_1, 'expected': 2.6}
+   { 'yaml': yaml_5_1, 'expected': 7},
+   { 'yaml': yaml_5_2, 'expected': 3.5},
+   { 'yaml': yaml_5_3, 'expected': 3.5},
+   { 'yaml': yaml_13_1, 'expected': 7.5}
 ])
 
 class TestNPMean(unittest.TestCase):
@@ -25,13 +25,12 @@ class TestNPMean(unittest.TestCase):
 
     def tearDown(self):
         self.yaml.close()
-
-    """
+    
     def test(self):
         metric = NP(self.yaml)
         mean = metric.mean()
         self.assertEqual(mean, self.expected, 'Test failed because expected ' + str(self.expected) + ' and got ' + str(mean) +'!') 
-    """
+    
 if __name__ == "__main__":
     unittest.main()
 

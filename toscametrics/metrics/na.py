@@ -1,54 +1,91 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
-from toscaparser.tosca_template import ToscaTemplate
 from toscametrics.utils import getArtifacts
+from toscametrics.yml.loc import LOC
+from toscametrics.yml.etp import ETP
+
+from io import StringIO
 
 class NA(BlueprintMetric):
     """ This class is responsible for providing the methods to count the number of artifacts defined in a given .yaml file"""
     
-    # def count(self):
-    #     '''Function which counts the number of artifacts for all the nodes'''
-    #     try:
-    #         template = ToscaTemplate(yaml_dict_tpl=self.getyml)
-    #         node_temps = template.nodetemplates
-    #         artfs = []
-    #         for temp in node_temps:
-    #             temp = temp.templates.get(temp.name)
-    #             try:
-    #                 print(temp)
-    #                 artf = getArtifacts(temp)
-    #                 print(artf)
-    #                 artfs.append(len(artf[0][1]))
-    #             except IndexError:
-    #                 artfs.append(0)
-    #         return sum(artfs)
-    #     except: AttributeError:
-    #         return 0
+
+    def _get_elements(self):
+        '''Function which collects all the artifacts with their attributes in a list'''
+        try:
+            template = self.getyml
+            artifacts = getArtifacts(template)
+
+            arts = []
+            for art in artifacts:
+                if isinstance(art, list):
+                    arts.extend(art)
+
+                elif isinstance(art, dict):
+                    arts.append(art)
+
+                else:
+                    continue
+
+            return arts
+
+        except (KeyError, AttributeError):
+            return []    
 
 
     def count(self):
         '''Function which counts the number of artifacts within the whole script'''
         try:
-            template = self.getyml
-            artifacts = getArtifacts(template)
-            count = 0
+            artifacts = self._get_elements()
+
+            names = []
             for art in artifacts:
-                count += len(art)
-            return count
+                names.extend(art.keys())
+            unique_names = set(names)
+
+            return len(unique_names)
 
         except AttributeError:
             return 0
 
 
+    def relative(self):
+        '''Count relative to the lines of code'''
+        try:
+            strio = StringIO(self.getStringIOobject)
+            return self.count() / LOC(strio).count()
+
+        except (KeyError, AttributeError, ZeroDivisionError):
+            return 0
+
+
+    def entropy(self):
+        '''Counts the entropy for the _get_elements blocks'''
+        try:
+            strio = StringIO(self.getStringIOobject)
+
+            block = {}
+            for element in self._get_elements():
+                if isinstance(element, dict):
+                    block.update(element)
+            
+            return ETP(strio).count(custom=block)
+
+        except (KeyError, AttributeError, ZeroDivisionError):
+            return 0
+
+
 # from io import StringIO
 
-# string = "tosca_definitions_version: tosca_simple_yaml_1_2\n\nimports:\n- artifacts.yaml\n- relationships.yaml\n\nnode_types:\n\n  tosca.nodes.nfv.VDU.Compute:\n    derived_from: tosca.nodes.Compute\n    capabilities:\n      virtual_compute:\n        description: >-\n          Describes virtual compute resources capabilities.\n        type: tosca.capabilities.nfv.VirtualCompute\n    artifacts:\n      sw_image:\n        description: >-\n          Describes the software image which is directly loaded on the virtualization container\n          realizing this virtual storage.\n        file: '' # ERRATUM: missing value even though it is required in TOSCA\n        type: tosca.artifacts.nfv.SwImage"
+# path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\SeaCloudsEU\SeaCloudsPlatform\Industry\splittednuro_adp-iaas.yml'
+# with open(path, 'r') as file:
+#             yml = file.read()
+#             print(yml)
 
-# print(string)
-
-# yml = StringIO(string.expandtabs(2)) 
+# yml = StringIO(yml.expandtabs(2)) 
 # metric = NA(yml)
 
 # print('NA count: ', metric.count())
+# print(metric._get_elements())
 
 
 

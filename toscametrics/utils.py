@@ -41,21 +41,31 @@ def toString(obj):
 def getCapabilities(node_dict):
     '''Function which transforms the dict of a node template instance into a list of capability tuples'''
     kvlist = keyValueList(node_dict)
-    caps = [cap for cap in kvlist if cap[0] == 'capabilities']
+    caps = [cap[1] for cap in kvlist if cap[0] == 'capabilities' or cap[0] == 'capability']
     return caps
 
 def getProperties(cap_dict):
     '''Function which transforms a dictionary instance into a list of property tuples'''
     kvlist = keyValueList(cap_dict)
-    props = [prop for prop in kvlist if prop[0] == 'properties']
+    props = [prop[1] for prop in kvlist if prop[0] == 'properties']
     return props
 
 def getInputs(top_dict):
-    '''Function which transforms the dict of a topology template instance into a list of inputs tuples'''
-    #Watch out here that inputs can be on different levels, so you get the template inputs and relationship inputs together for example. 
+    '''Function which transforms the dict of a topology template instance into a list'''
     kvlist = keyValueList(top_dict)
-    inps = [inp for inp in kvlist if inp[0] == 'inputs']
+    inps = [inp[1] for inp in kvlist if inp[0] == 'inputs']
     return inps
+
+def getOutputs(top_dict):
+    '''Function which transforms the dict of a topology template instance into a list'''
+    kvlist = keyValueList(top_dict)
+    outs = [out[1] for out in kvlist if out[0] == 'outputs']
+    return outs
+
+def getWorkflows(d):
+    kvlist = keyValueList(d)
+    workflows = [wf[1] for wf in kvlist if wf[0] == 'workflows']
+    return workflows
 
 def getArtifacts(d):
     '''Function which finds the 'artifact' keys in a given dictionary and put these into a list'''
@@ -69,10 +79,7 @@ def getArtifacts(d):
 def getRequirements(d):
     '''Function which finds the 'requirements' keys in a given dictionary and put these into a list'''
     kvlist = keyValueList(d)
-    reqs = []
-    for kv in kvlist:
-        if kv[0] == 'requirements':
-            reqs.append(kv[1])
+    reqs = [req[1] for req in kvlist if req[0] == 'requirements']
     return reqs
 
 def getNodeTypes(blue_dict):
@@ -90,20 +97,45 @@ def getRelationshipTypes(blue_dict):
 def getInterfaces(blue_dict):
     '''Function which transforms a dict into a list of interface tuples. Useful for interface outside of templates'''
     kvlist = keyValueList(blue_dict)
-    intrfcs = [intf for intf in kvlist if intf[0] == 'interfaces']
+    intrfcs = [intf[1] for intf in kvlist if intf[0] == 'interfaces']
     return intrfcs
 
 def getGroups(blue_dict):
     '''Function which transforms a dict into a list of group tuples'''
     kvlist = keyValueList(blue_dict)
-    groups = [group for group in kvlist if group[0] == 'groups']
+    groups = [group[1] for group in kvlist if group[0] == 'groups']
     return groups
 
 def getPolicies(blue_dict):
     '''Function which transforms a dict into a list of policy tuples'''
     kvlist = keyValueList(blue_dict)
-    policies = [pol for pol in kvlist if pol[0] == 'policies']
+    policies = [pol[1] for pol in kvlist if pol[0] == 'policies']
     return policies
+
+def getNodeTemplates(d):
+    '''Function which transforms a dict into a list of node template tuples'''
+    kvlist = keyValueList(d)
+    node_temps = []
+    for kv in kvlist:
+        if kv[0] == 'node_templates':
+            node_temps.append(kv[1])
+    return node_temps
+
+def getRelationshipTemplates(d):
+    '''Function which transforms a dict into a list of relationship template tuples'''
+    kvlist = keyValueList(d)
+    rel_temps = []
+    for kv in kvlist:
+        if kv[0] == 'relationship_templates':
+            rel_temps.append(kv[1])
+    return rel_temps
+
+
+def getOperations(d):
+    '''Function which transforms a dict into a list of operations.'''
+    kvlist = keyValueList(d)
+    ops = [op[1] for op in kvlist if op[0] == 'operations']
+    return ops
 
 
 def allKeys(d): 
