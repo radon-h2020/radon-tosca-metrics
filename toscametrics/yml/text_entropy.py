@@ -1,7 +1,7 @@
 from math import log2
 
 import toscametrics.utils as utils
-from toscametrics.blueprint.blueprint_metric import BlueprintMetric
+from toscametrics.blueprint_metric import BlueprintMetric
 
 class ETP(BlueprintMetric):
     """ This class implements the metric 'Text Entropy' of blueprint script. """
@@ -12,8 +12,8 @@ class ETP(BlueprintMetric):
             keys = utils.allKeys(custom)
             values = utils.allValues(custom)
         else:
-            keys = utils.allKeys(self.getyml)
-            values = utils.allValues(self.getyml)
+            keys = utils.allKeys(self.blueprint)
+            values = utils.allValues(self.blueprint)
         
         words = keys
 
@@ -21,7 +21,7 @@ class ETP(BlueprintMetric):
             words.extend(str(v).split())
 
         wordset = set(words)
-        freq={word: words.count(word) for word in wordset}
+        freq={word: words.count for word in wordset}
 
         entropy = 0
         for word in wordset:
