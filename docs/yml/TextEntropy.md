@@ -61,8 +61,7 @@ from toscametrics.yml.text_entropy import TextEntropy
 str = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template for deploying a single server with predefined properties.\n\ntopology_template:\n  inputs:\n    cpus:\n      type: integer\n      description: Number of CPUs for the server.\n      constraints:\n        - valid_values: [ 1, 2, 4, 8 ]\n\n  node_templates:\n    my_server:\n      type: tosca.nodes.Compute\n      capabilities:\n        # Host container properties\n        host:\n          properties:\n            # Compute properties\n            num_cpus: { get_input: cpus }\n            mem_size: 2048  MB\n            disk_size: 10 GB'
 yml = StringIO(str.expands(2))  # substitute \t with 2 spaces and create the StringIO object
 metric = TextEntropy(yml)
-print('Text entropy: ' + str(metric.count()))
+print('Text entropy: ' + str(metric.count))
 
->> > Text
-entropy: 5.35
+>>> Text entropy: 5.35
 ```
