@@ -1,19 +1,16 @@
-from toscametrics.blueprint.blueprint_metric import BlueprintMetric
-from toscametrics.utils import getCapabilities
+from toscametrics.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getProperties
 
 from toscametrics.metrics.cdat import CDAT
 from toscametrics.metrics.cdct import CDCT
-from toscametrics.metrics.cddt import CDDT
 from toscametrics.metrics.cdgt import CDGT
 from toscametrics.metrics.cdnt import CDNT
 from toscametrics.metrics.cdpt import CDPT
 from toscametrics.metrics.cdrt import CDRT
 from toscametrics.metrics.na import NA
-from toscametrics.metrics.nn import NN
+from toscametrics.metrics.num_node_templates import NumNodeTemplates
 from toscametrics.metrics.nc import NC
-from toscametrics.metrics.nr import NR
-from toscametrics.metrics.nrq import NRQ
+from toscametrics.metrics.num_relationship_types import NumRelationshipTypes
 from toscametrics.metrics.npol import NPOL
 from toscametrics.metrics.ngro import NGRO
 
@@ -21,7 +18,7 @@ from statistics import mean
 from statistics import median
 from io import StringIO
 
-class NP(BlueprintMetric):
+class NumProperties(BlueprintMetric):
     """ This class is responsible for providing the methods to count the total number of capability properties, provide the minimum number per capability, the maximum number per entity, the mean and median defined in a given .yaml file"""
 
     def _get_elements(self, option=False):
@@ -40,8 +37,8 @@ class NP(BlueprintMetric):
             CDPT(strio)._get_elements(),
             CDRT(strio)._get_elements(),
             NA(strio)._get_elements(),
-            NN(strio)._get_elements(),
-            NR(strio)._get_elements(),
+            NumNodeTemplates(strio)._get_elements(),
+            NumRelationshipTypes(strio)._get_elements(),
             #NRQ(strio)._get_elements(),
             #NC(strio)._get_elements(),
             NPOL(strio)._get_elements(),
@@ -120,11 +117,11 @@ class NP(BlueprintMetric):
 
 # print(string)
 # yml = StringIO(string.expandtabs(2)) 
-# metric = NP(yml)
+# metric = NumProperties(yml)
 
-# print('NP count: ', metric.count())
-# print('NP min: ', metric.min())
-# print('NP max: ', metric.max())
-# print('NP mean: ', metric.mean())
-# print('NP median: ', metric.median())
+# print('NumProperties count: ', metric.count())
+# print('NumProperties min: ', metric.min())
+# print('NumProperties max: ', metric.max())
+# print('NumProperties mean: ', metric.mean())
+# print('NumProperties median: ', metric.median())
 # #metric._get_elements()
