@@ -1,12 +1,13 @@
-from toscametrics.yml.loc import LOC
+from toscametrics.yml.lines_code import LinesCode
 
-class BLOC(LOC):
-    """ This class is responsible for providing the methods to count the blank lines of code (bloc) in a given .yaml file"""
+
+class LinesBlank(LinesCode):
+    """ This class counts the blank lines in a blueprint"""
 
     def count(self):
         bloc = 0
 
-        for l in self.getyml().splitlines():            
+        for l in self.blueprint.splitlines():
             if not l.strip():
                 bloc = bloc + 1
 

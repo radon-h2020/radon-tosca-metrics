@@ -42,13 +42,13 @@ The following example has **2 blank lines**.
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
->>> from io import StringIO
->>> from toscametrics.yml.lines_blank import LinesBlank
+from io import StringIO
+from toscametrics.yml.lines_blank import LinesBlank
 
->>> str = 'TODO' 
->>> yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
->>> metric = LinesBlank(yml)
->>> print('BLOC: ' + str(metric.count()))
+str = 'TODO' 
+yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
+metric = LinesBlank(yml)
+print('Lines blank: ' + str(metric.count()))
 
-BLOC: 2
+>>> Lines blank: 2
 ```
