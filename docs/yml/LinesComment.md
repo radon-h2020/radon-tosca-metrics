@@ -1,24 +1,8 @@
-# Number of commented lines of code (CLOC)
+# Number of commented lines of code
 
 ## Description
 
 Returns the number of _commented_ lines of code in a yaml file.
-
----
-
-## Parameters
-
-**_Input_:**
-
-* ```yaml : StringIO``` -- a StringIO object representing a yaml file;
-
-**_Output_:** 
-
-* an _integer >= 0_.
-
-**_Exception_:**
-
-* ```YAMLError``` if the value of ```yaml``` does not represent a valid yaml file.
 
 ---
 
@@ -42,6 +26,21 @@ The following example has **2 commented lines of code**.
 ```
 
 ---
+
+## Parameters
+
+
+|   | **Type** | **Description** |
+|---|---|---|
+**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Output:**| `unsigned int`| The number of lines of comments|
+**Exception:**| `TypeError`| If the input file is not a valid TOSCA blueprint or is empty |
+
+
+---
+
+## How to use
+
 
 Below an example on how to call the metric and the expected output for this example:
 
