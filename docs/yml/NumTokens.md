@@ -49,7 +49,7 @@ str = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template
 
 yml = StringIO(str.expands(2))  # substitute \t with 2 spaces and create the StringIO object
 metric = NumTokens(yml)
-print('Number of tokens: ' + str(metric.count))
+print('Number of tokens: ' + NumTokens(yml).count())
 
 >> > Number of tokens: 30
 ```

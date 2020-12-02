@@ -8,7 +8,6 @@ from toscametrics.blueprint_metric import BlueprintMetric
 class TextEntropy(BlueprintMetric):
     """ This class measures the blueprint's Shannon entropy for keywords frequencies """
 
-    @property
     def count(self):
         words_list = utils.all_keys(self.blueprint)
         words_list.extend(utils.all_values(self.blueprint))

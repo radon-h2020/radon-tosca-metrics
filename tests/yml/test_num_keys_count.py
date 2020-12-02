@@ -26,4 +26,4 @@ class TestNKEYSCount(unittest.TestCase):
         self.yaml.close()
 
     def test(self):
-        self.assertEqual(NumKeys(self.yaml).count, self.expected)
+        self.assertEqual(NumKeys(self.yaml).count(), self.expected)

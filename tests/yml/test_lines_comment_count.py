@@ -23,6 +23,4 @@ class TestLinesCommentCount(unittest.TestCase):
         self.yaml.close()
 
     def test(self):
-        metric = LinesComment(self.yaml)
-        count = metric.count()
-        self.assertEqual(count, self.expected)
+        self.assertEqual(LinesComment(self.yaml).count(), self.expected)

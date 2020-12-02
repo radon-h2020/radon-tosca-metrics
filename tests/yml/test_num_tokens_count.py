@@ -23,6 +23,4 @@ class TestNumTokensCount(unittest.TestCase):
         self.yaml.close()
 
     def test(self):
-        metric = NumTokens(self.yaml)
-        count = metric.count
-        self.assertEqual(count, self.expected)
+        self.assertEqual(NumTokens(self.yaml).count(), self.expected)

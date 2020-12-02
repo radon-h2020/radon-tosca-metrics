@@ -50,8 +50,7 @@ from toscametrics.yml.lines_comment import LinesComment
 
 str = 'tasks:\n\t- name: Find all instances in the specified region\n\t\tali_instance_facts ...' 
 yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
-metric = LinesComment(yml)
-print('Lines of comment: ' + str(metric.count()))
+print('Lines of comment: ' + LinesComment(yml).count())
 
 >>> Lines of comment: 2
 ```

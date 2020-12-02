@@ -29,4 +29,4 @@ class TestNSCMCount(unittest.TestCase):
         self.yaml.close()
 
     def test(self):
-        self.assertEqual(NumSuspiciousComments(self.yaml).count, self.expected)
+        self.assertEqual(NumSuspiciousComments(self.yaml).count(), self.expected)

@@ -47,8 +47,7 @@ from toscametrics.yml.lines_blank import LinesBlank
 
 str = 'TODO' 
 yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
-metric = LinesBlank(yml)
-print('Lines blank: ' + str(metric.count()))
+print('Lines blank: ' + str(LinesBlank(yml).count()))
 
 >>> Lines blank: 2
 ```

@@ -47,8 +47,7 @@ from toscametrics.yml.lines_code import LinesCode
 
 str = 'TODO' 
 blueprint = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
-metric = LinesCode(blueprint)
-print('Lines of code: ' + str(metric.count()))
+print('Lines of code: ' + LinesCode(blueprint).count())
 
 >>> Lines of code: 8
 ```

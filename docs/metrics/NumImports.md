@@ -42,7 +42,7 @@ from toscametrics.metrics.num_imports import NumImports
 
 str = 'imports:\n  - some_definition_file: path1/path2/some_defs.yaml\n  - another_definition_file:\n      file: path1/path2/file2.yaml\n      repository: my_service_catalog\n      namespace_uri: http://mycompany.com/tosca/1.0/platform\n      namespace_prefix: mycompany'
 yml = StringIO(str.expandtabs(2))  # substitute \t with 2 spaces and create the StringIO object
-print('Number of imports: ' + str(NumImports(yml).count))
+print('Number of imports: ' + str(NumImports(yml).count()))
 
 >>> Number of imports: 2
 ```

@@ -33,14 +33,8 @@ class TestLOCInit(unittest.TestCase):
         raised = Raised.FALSE
 
         try:
-            metric = LinesCode(self.yaml)
+            LinesCode(self.yaml)
         except TypeError:
             raised = Raised.TRUE
 
-        self.assertEqual(raised, self.expected,
-                         'Test failed because expected \'' + str(self.expected.value) + '\' and got \'' + str(
-                             raised.value) + '\'!')
-
-
-if __name__ == "__main__":
-    unittest.main()
+        self.assertEqual(raised, self.expected)

@@ -6,7 +6,6 @@ from toscametrics.blueprint_metric import BlueprintMetric
 class NumSuspiciousComments(BlueprintMetric):
     """ This class counts the number of suspicious comments in the blueprint"""
 
-    @property
     def count(self):
         """ Return the number of suspicious comments in the script. """
         content = StringIO(self.getStringIOobject)

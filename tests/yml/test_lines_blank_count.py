@@ -24,10 +24,4 @@ class TestLinesBlankCount(unittest.TestCase):
         self.yaml.close()
 
     def test(self):
-        metric = LinesBlank(self.yaml)
-        count = metric.count()
-        self.assertEqual(count, self.expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
+        self.assertEqual(LinesBlank(self.yaml).count(), self.expected)
