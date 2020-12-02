@@ -52,14 +52,14 @@ topology_template:
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
->>> from io import StringIO
->>> from toscametrics.metrics.nnt import NNT
+>> > from io import StringIO
+>> > from toscametrics.metrics.nnt import NNT
 
->>> str = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\n \n\ndescription: Template for deploying a single server with MySQL software on top.\n\n \n\ntopology_template:\n\n  inputs:\n\n    mysql_rootpw:\n\n      type: string\n\n    mysql_port:\n\n      type: integer\n\n    # rest omitted here for brevity\n\n \n\n  node_templates:\n\n    db_server:\n\n      type: tosca.nodes.Compute\n\n      # rest omitted here for brevity\n\n \n\n    mysql:\n\n      type: tosca.nodes.DBMS.MySQL'
+>> > str = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\n \n\ndescription: Template for deploying a single server with MySQL software on top.\n\n \n\ntopology_template:\n\n  inputs:\n\n    mysql_rootpw:\n\n      type: string\n\n    mysql_port:\n\n      type: integer\n\n    # rest omitted here for brevity\n\n \n\n  node_templates:\n\n    db_server:\n\n      type: tosca.nodes.Compute\n\n      # rest omitted here for brevity\n\n \n\n    mysql:\n\n      type: tosca.nodes.DBMS.MySQL'
 
->>> yml = StringIO(str.expandtabs(2)) #substitute \t with 2 spaces and create the StringIO object
->>> metric = NNT(yml)
->>> print('NNT: ', metric.count())
+>> > yml = StringIO(str.expandtabs(2))  # substitute \t with 2 spaces and create the StringIO object
+>> > metric = NNT(yml)
+>> > print('NNT: ', metric.count)
 
 NNT: 2
 ```
