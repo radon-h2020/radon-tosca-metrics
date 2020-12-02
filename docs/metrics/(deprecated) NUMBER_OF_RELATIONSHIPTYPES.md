@@ -48,14 +48,14 @@ topology_template:
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
->>> from io import StringIO
->>> from toscametrics.metrics.nrt import NRT
+>> > from io import StringIO
+>> > from toscametrics.metrics.nrt import NRT
 
->>> str = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ntopology_template:\n  relationship_templates:\n    storage_attachesto_1:\n      type: MyAttachesTo\n      properties:\n        location: /my_data_location\n    \n    my_connectsto_relationship:\n      type: tosca.relationships.ConnectsTo\n      interfaces:\n        Configure:\n          inputs:\n            speed: { get_attribute: [ SOURCE, connect_speed ] } '
+>> > str = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ntopology_template:\n  relationship_templates:\n    storage_attachesto_1:\n      type: MyAttachesTo\n      properties:\n        location: /my_data_location\n    \n    my_connectsto_relationship:\n      type: tosca.relationships.ConnectsTo\n      interfaces:\n        Configure:\n          inputs:\n            speed: { get_attribute: [ SOURCE, connect_speed ] } '
 
->>> yml = StringIO(str.expandtabs(2)) #substitute \t with 2 spaces and create the StringIO object
->>> metric = NRT(yml)
->>> print('NRT: ', metric.count())
+>> > yml = StringIO(str.expandtabs(2))  # substitute \t with 2 spaces and create the StringIO object
+>> > metric = NRT(yml)
+>> > print('NRT: ', metric.count)
 
 NRT: 2
 ```
