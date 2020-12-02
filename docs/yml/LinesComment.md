@@ -45,13 +45,13 @@ The following example has **2 commented lines of code**.
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
->>> from io import StringIO
->>> from toscametrics.yml.cloc import CLOC
+from io import StringIO
+from toscametrics.yml.lines_comment import LinesComment
 
->>> str = 'tasks:\n\t- name: Find all instances in the specified region\n\t\tali_instance_facts ...' 
->>> yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
->>> metric = CLOC(yml)
->>> print('CLOC: ' + str(metric.count()))
+str = 'tasks:\n\t- name: Find all instances in the specified region\n\t\tali_instance_facts ...' 
+yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
+metric = LinesComment(yml)
+print('Lines of comment: ' + str(metric.count()))
 
-CLOC: 2
+>>> Lines of comment: 2
 ```
