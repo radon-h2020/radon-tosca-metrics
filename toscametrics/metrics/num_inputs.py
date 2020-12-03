@@ -3,7 +3,12 @@ from toscametrics.utils import key_value_list
 
 
 class NumInputs(BlueprintMetric):
-    """ This class is responsible counts the blueprint's number of parameters"""
+    """
+    This class is responsible counts the blueprint's number of inputs
+    It currently supports inputs in the following constructs:
+    - interfaces
+    - operations
+    """
 
     def count(self):
 

@@ -6,6 +6,8 @@ Returns the number of inputs within a blueprint template.
 
 Input parameters can be assigned to properties within the node template.   
 
+**Note** It currently identifies inputs for the following constructs: `interfaces`, `operations`.
+
 ---
 
 ## Example
