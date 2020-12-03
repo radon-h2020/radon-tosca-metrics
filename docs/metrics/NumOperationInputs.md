@@ -2,7 +2,7 @@
 
 ## Description
 
-Returns the number of `interfaces` inputs within a blueprint template. 
+Returns the number of inputs within a blueprint template. 
 
 `Interfaces Types` define inputs that need to be provided to each operation. 
 This inputs can be considered as method's parameters. 
@@ -52,7 +52,7 @@ topology_template:
 |   | **Type** | **Description** |
 |---|---|---|
 **Input:**| `io.StringIO`| A TOSCA blueprint|
-**Output:**| `unsigned int`| The number of `interfaces` input |
+**Output:**| `unsigned int`| The number of parameters |
 **Exception:**| `TypeError`| If blueprint is empty or invalid|
 
 ---
