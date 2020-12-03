@@ -65,11 +65,13 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 from io import StringIO
-from toscametrics.metrics.num_parameters import NumParameters
+from toscametrics.metrics.num_interface_inputs import NumInterfaceInputs
 
 str = 'topology_template:\n  inputs:\n    numberOfSites:\n      type: integer\n    locations:\n      type: list\n      entry_schema: Location\n\n  node_templates:\n    sdwan:\n      type: VPN\n    site:\n      type: VPNSite\n      occurrences: [1, UNBOUNDED]\n      instance_count: { get_input: numberOfSites }\n      properties:\n        location: { get_input: [ locations, INDEX ] }\n      requirements:\n        - vpn: sdwan\n'  # part of ninp_2_1.yaml
 yml = StringIO(str.expandtabs(2))  # substitute \t with 2 spaces and create the StringIO object
-print('Number of parameters: ' + str(NumParameters(yml).count()))
+print('Number of parameters: ' + str(NumInterfaceInputs(yml).count()))
 
->>> Number of parameters: 2
+>> > Number
+of
+parameters: 2
 ```

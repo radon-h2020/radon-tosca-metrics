@@ -1,10 +1,9 @@
 import unittest
 from parameterized import parameterized_class
 from io import StringIO
-from toscametrics.metrics.num_parameters import NumParameters
+from toscametrics.metrics.num_interface_inputs import NumInterfaceInputs
 
 
-#yaml_ninp_id
 yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\ndescription: Template for deploying a single server ' \
          'with MySQL software on top.\n\ntopology_template:\n  node_templates:\n    db_server:\n      type: ' \
          'tosca.nodes.Compute\n\n    mysql:\n      type: tosca.nodes.DBMS.MySQL '
@@ -22,8 +21,8 @@ yaml_5 = 'tosca_definitions_version: tosca_simple_yaml_1_3\ntopology_template:\n
 
 
 @parameterized_class([
-   { 'yaml': yaml_0, 'expected': 0},
-   { 'yaml': yaml_5, 'expected': 5},
+   {'yaml': yaml_0, 'expected': 0},
+   {'yaml': yaml_5, 'expected': 5},
 ])
 class TestNumParametersCount(unittest.TestCase):
     def setUp(self):
@@ -33,4 +32,4 @@ class TestNumParametersCount(unittest.TestCase):
         self.blueprint.close()
     
     def test(self):
-        self.assertEqual(NumParameters(self.blueprint).count(), self.expected)
+        self.assertEqual(NumInterfaceInputs(self.blueprint).count(), self.expected)

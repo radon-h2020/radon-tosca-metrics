@@ -2,7 +2,7 @@ from toscametrics.blueprint_metric import BlueprintMetric
 from toscametrics.utils import key_value_list
 
 
-class NumParameters(BlueprintMetric):
+class NumInterfaceInputs(BlueprintMetric):
     """ This class is responsible counts the blueprint's number of parameters"""
 
     def count(self):
