@@ -52,7 +52,7 @@ topology_template:
 |   | **Type** | **Description** |
 |---|---|---|
 **Input:**| `io.StringIO`| A TOSCA blueprint|
-**Output:**| `unsigned int`| The number of inputs |
+**Output:**| `unsigned int`| The number of parameters |
 **Exception:**| `TypeError`| If blueprint is empty or invalid|
 
 ---
