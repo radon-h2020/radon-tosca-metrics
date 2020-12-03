@@ -41,7 +41,7 @@ def all_values(blueprint: Union[dict, list]) -> list:
     return values
 
 
-def keyValueList(d):
+def key_value_list(d):
     """ 
     This function iterates over all the key-value pairs of a dictionary and returns a list of tuple (key, value).
     d -- a dictionary to iterate through
@@ -49,21 +49,21 @@ def keyValueList(d):
     if not isinstance(d, dict) and not isinstance(d, list):
         return []
 
-    keyvalues = []
+    key_values = []
 
     if isinstance(d, list):
         for entry in d:
             if isinstance(entry, dict):
-                keyvalues.extend(keyValueList(entry))
+                key_values.extend(key_value_list(entry))
     else:
         for k, v in d.items():
             if k is None or v is None:
                 continue
 
-            keyvalues.append((k, v))
-            keyvalues.extend(keyValueList(v))
+            key_values.append((k, v))
+            key_values.extend(key_value_list(v))
 
-    return keyvalues
+    return key_values
 
 
 def str2bool(s):
@@ -142,11 +142,6 @@ def getNodeTypes(blue_dict):
     return nodetypes
 
 
-def getRelationshipTypes(blue_dict):
-    '''Function which transforms the dict of a blueprint instance into a list of relationshipTypes tuples'''
-    kvlist = keyValueList(blue_dict)
-    reltypes = [nt for nt in kvlist if nt[0] == 'relationship_types']
-    return reltypes
 
 
 def getInterfaces(blue_dict):
@@ -179,15 +174,6 @@ def getNodeTemplates(d):
             node_temps.append(kv[1])
     return node_temps
 
-
-def getRelationshipTemplates(d):
-    '''Function which transforms a dict into a list of relationship template tuples'''
-    kvlist = keyValueList(d)
-    rel_temps = []
-    for kv in kvlist:
-        if kv[0] == 'relationship_templates':
-            rel_temps.append(kv[1])
-    return rel_temps
 
 
 def getOperations(d):
