@@ -24,7 +24,7 @@ yaml_5 = 'tosca_definitions_version: tosca_simple_yaml_1_3\ntopology_template:\n
    {'yaml': yaml_0, 'expected': 0},
    {'yaml': yaml_5, 'expected': 5},
 ])
-class TestNumParametersCount(unittest.TestCase):
+class TestNumInterfaceInputsCount(unittest.TestCase):
     def setUp(self):
         self.blueprint = StringIO(self.yaml.expandtabs(2))
 
