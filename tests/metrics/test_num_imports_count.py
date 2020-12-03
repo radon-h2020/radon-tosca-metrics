@@ -30,4 +30,4 @@ class TestNumImportCount(unittest.TestCase):
         self.blueprint.close()
     
     def test(self):
-        self.assertEqual(NumImports(self.blueprint).count, self.expected)
+        self.assertEqual(NumImports(self.blueprint).count(), self.expected)

@@ -22,6 +22,6 @@ class TestNumRelationshipTypesCount(unittest.TestCase):
         self.blueprint.close()
     
     def test(self):
-        self.assertEqual(NumRelationshipTypes(self.blueprint).count, self.expected)
+        self.assertEqual(NumRelationshipTypes(self.blueprint).count(), self.expected)
 
 

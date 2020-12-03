@@ -4,8 +4,7 @@ from toscametrics.utils import key_value_list
 
 class NumNodeTemplates(BlueprintMetric):
     """ This class counts the blueprint's number of node templates"""
-    
-    @property
+
     def count(self):
         types = 0
         for key, value in key_value_list(self.blueprint):

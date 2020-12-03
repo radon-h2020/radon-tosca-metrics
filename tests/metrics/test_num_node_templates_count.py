@@ -29,5 +29,5 @@ class TestNumNodeTemplatesCount(unittest.TestCase):
         self.blueprint.close()
     
     def test(self):
-        self.assertEqual(NumNodeTemplates(self.blueprint).count, self.expected)
+        self.assertEqual(NumNodeTemplates(self.blueprint).count(), self.expected)
 
