@@ -5,21 +5,19 @@ from io import StringIO
 class LinesCode:
     """ This class counts the blueprint's executable lines of code"""
 
-    def __init__(self, blueprint):
+    def __init__(self, blueprint: str):
         """
         Initialize a new LinesCode metric.
         :param blueprint: a StringIO object representing a valid TOSCA blueprint
         """
-        if not isinstance(blueprint, StringIO):
-            raise TypeError("Expected a StringIO object")
 
         try:
             # Check if is a valid yaml
-            self.__blueprint = yaml.safe_load(blueprint.getvalue())
+            self.__blueprint = yaml.safe_load(blueprint)
             if self.__blueprint is None:
                 raise TypeError("Expected a non-empty blueprint")
             
-            self.__blueprint = blueprint.getvalue()
+            self.__blueprint = blueprint
 
         except yaml.YAMLError:
             raise TypeError("Expected a valid YAML")

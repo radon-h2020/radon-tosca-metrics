@@ -18,7 +18,7 @@ setup(name='tosca-metrics',
       author_email='stefano.dallapalma0@gmail.com',
       packages=find_packages(exclude=('test',)),
       entry_points = {
-        'console_scripts': ['tosca-metrics=toscametrics.cli:main'],
+        'console_scripts': ['tosca-metrics=toscametrics.command_line:cli'],
       },
       classifiers=[
           "Development Status :: 3 - Alpha",

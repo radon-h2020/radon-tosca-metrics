@@ -1,14 +1,23 @@
 #General metrics
-from toscametrics.yml.bloc import BLOC
-from toscametrics.yml.cloc import CLOC
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.dpt import DPT
-from toscametrics.yml.etp import ETP
-from toscametrics.yml.nco import NCO
-from toscametrics.yml.nkeys import NKEYS
-from toscametrics.yml.ntkn import NTKN
-from toscametrics.yml.nscm import NSCM
+from toscametrics.yml.lines_blank import LinesBlank
+from toscametrics.yml.lines_comment import LinesComment
+from toscametrics.yml.lines_code import LinesCode
+from toscametrics.yml.num_keys import NumKeys
+from toscametrics.yml.num_suspicious_comments import NumSuspiciousComments
+from toscametrics.yml.num_tokens import NumTokens
+from toscametrics.yml.text_entropy import TextEntropy
 
+general_metrics = {
+    'lines_code'   :   LinesCode, 
+    'lines_blank'  :   LinesBlank,
+    'lines_comment'  :   LinesComment,
+    'num_keys'   :   NumKeys,
+    'num_suspicious_comments'   :   NumSuspiciousComments,
+    'num_tokens' :   NumTokens,
+    'text_entropy'  :   TextEntropy,
+    }
+
+"""  
 #Tosca metrics
 from toscametrics.metrics.na import NA
 from toscametrics.metrics.nc import NC
@@ -48,17 +57,7 @@ from toscametrics.metrics.ntri import NTRI
 from toscametrics.metrics.tett import TETT
 
 
-general_metrics = {
-    'loc'   :   LOC, 
-    'bloc'  :   BLOC,
-    'cloc'  :   CLOC,
-    'dpt'   :   DPT,
-    'etp'   :   ETP,
-    'nco'   :   NCO,
-    'nkeys' :   NKEYS,
-    'ntkn'  :   NTKN,
-    'nscm'  :   NSCM
-    }
+
 
 tosca_metrics = {
     'na'    :   NA,
@@ -98,3 +97,4 @@ tosca_metrics = {
     'ntri'  :   NTRI,
     'tett'  :   TETT
     }
+""" 
