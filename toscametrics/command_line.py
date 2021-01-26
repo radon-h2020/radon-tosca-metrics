@@ -7,7 +7,7 @@ from io import StringIO
 
 from toscametrics.metrics_extractor import extract_all
 
-VERSION = '0.3.10'
+VERSION = '0.0.6'
 
 
 def get_parser():

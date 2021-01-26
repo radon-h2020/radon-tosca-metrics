@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='tosca-metrics',
-      version='0.0.5',
+      version='0.0.6',
       description='A module to extract metrics rom TOSCA blueprints',
       long_description=long_description,
       long_description_content_type="text/markdown",
