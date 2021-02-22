@@ -49,7 +49,7 @@ topology_template:
 
 |   | **Type** | **Description** |
 |---|---|---|
-**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Input:**| `str`| A TOSCA blueprint|
 **Output:**| `unsigned int`| The number of `interfaces` input |
 **Exception:**| `TypeError`| If blueprint is empty or invalid|
 
@@ -62,12 +62,11 @@ topology_template:
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from io import StringIO
 from toscametrics.metrics.num_inputs import NumInputs
 
-str = 'topology_template:\n  inputs:\n    numberOfSites:\n      type: integer\n    locations:\n      type: list\n      entry_schema: Location\n\n  node_templates:\n    sdwan:\n      type: VPN\n    site:\n      type: VPNSite\n      occurrences: [1, UNBOUNDED]\n      instance_count: { get_input: numberOfSites }\n      properties:\n        location: { get_input: [ locations, INDEX ] }\n      requirements:\n        - vpn: sdwan\n'  # part of ninp_2_1.yaml
-yml = StringIO(str.expandtabs(2))  # substitute \t with 2 spaces and create the StringIO object
-print('Number of inputs: ' + str(NumInputs(yml).count()))
+yml = 'topology_template:\n  inputs:\n    numberOfSites:\n      type: integer\n    locations:\n      type: list\n      entry_schema: Location\n\n  node_templates:\n    sdwan:\n      type: VPN\n    site:\n      type: VPNSite\n      occurrences: [1, UNBOUNDED]\n      instance_count: { get_input: numberOfSites }\n      properties:\n        location: { get_input: [ locations, INDEX ] }\n      requirements:\n        - vpn: sdwan\n'  # part of ninp_2_1.yaml
+yml = yml.expandtabs(2)  # substitute \t with 2 spaces and create the StringIO object
+print('Number of inputs: ' + NumInputs(yml).count())
 
 >>> Number of inputs: 6
 ```

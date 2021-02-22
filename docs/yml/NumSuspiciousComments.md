@@ -34,7 +34,7 @@ topology_template:
 
 |   | **Type** | **Description** |
 |---|---|---|
-**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Input:**| `str`| A TOSCA blueprint|
 **Output:**| `unsigned int`| The number of suspicious comments|
 **Exception:**| `TypeError`| If blueprint is empty or invalid|
 
@@ -46,11 +46,10 @@ topology_template:
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from io import StringIO
 from toscametrics.yml.num_suspicious_comments import NumSuspiciousComments
 
-str = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template for deploying a single server with predefined properties.\n\n#TODO: add extra valid values \ntopology_template:\n  inputs:\n    cpus:\n      type: integer\n      description: Number of CPUs for the server.\n      constraints:\n        - valid_values: [ 1, 2, 4, 8 ]'
-yml = StringIO(str.expands(2))  # substitute \t with 2 spaces and create the StringIO object
+yml = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template for deploying a single server with predefined properties.\n\n#TODO: add extra valid values \ntopology_template:\n  inputs:\n    cpus:\n      type: integer\n      description: Number of CPUs for the server.\n      constraints:\n        - valid_values: [ 1, 2, 4, 8 ]'
+yml = yml.expands(2)
 print('Number of suspicious comments: ' + NumSuspiciousComments(yml).count())
 
 >>> Number of suspicious comments: 1

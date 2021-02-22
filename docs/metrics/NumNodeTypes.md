@@ -45,7 +45,7 @@ node_types:
 
 |   | **Type** | **Description** |
 |---|---|---|
-**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Input:**| `str`| A TOSCA blueprint|
 **Output:**| `unsigned int`| The number of relationship types|
 **Exception:**| `TypeError`| If blueprint is empty or invalid|
 
@@ -56,12 +56,11 @@ node_types:
 Below an example on how to call the metric, and the expected output for this example:
 
 ```python
-from io import StringIO
 from toscametrics.metrics.num_node_types import NumNodeTypes
 
-str = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: >\n\tNode type that has a requirement of a capability with a defined value\n\nnode_types:\n\n\ttosca.nodes.SomeNode:\n\t\tderived_from: tosca.nodes.Root\n\t\tproperties:\n\t\t\tsome_prop:\n\t\t\t\ttype: string\n\t\t\t\trequired: false\n\t\t\t\tdefault: some\n\t\trequirements:\n\t\t\t- some_req:\n\t\t\t\t\tcapability: tosca.capabilities.SomeCap\n\t\t\t\t\tnode: tosca.nodes.NodeWithCap\n\t\t\t\t\trelationship: tosca.relationships.HostedOn\n\n\ttosca.nodes.NodeWithCap:\n\t\tderived_from: tosca.nodes.Root\n\t\tcapabilities:\n\t\t\t\tsome_req:\n\t\t\t\t\ttype: tosca.capabilities.SomeCap'
-yml = StringIO(str.expandtabs(2))  # substitute \t with 2 spaces and create the StringIO object
-print('Number of node types: ' + str(NumNodeTypes(yml).count()))
+yml = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: >\n\tNode type that has a requirement of a capability with a defined value\n\nnode_types:\n\n\ttosca.nodes.SomeNode:\n\t\tderived_from: tosca.nodes.Root\n\t\tproperties:\n\t\t\tsome_prop:\n\t\t\t\ttype: string\n\t\t\t\trequired: false\n\t\t\t\tdefault: some\n\t\trequirements:\n\t\t\t- some_req:\n\t\t\t\t\tcapability: tosca.capabilities.SomeCap\n\t\t\t\t\tnode: tosca.nodes.NodeWithCap\n\t\t\t\t\trelationship: tosca.relationships.HostedOn\n\n\ttosca.nodes.NodeWithCap:\n\t\tderived_from: tosca.nodes.Root\n\t\tcapabilities:\n\t\t\t\tsome_req:\n\t\t\t\t\ttype: tosca.capabilities.SomeCap'
+yml = yml.expandtabs(2)
+print('Number of node types: ' + NumNodeTypes(yml).count())
 
 >>> Number of node types: 2
 ```

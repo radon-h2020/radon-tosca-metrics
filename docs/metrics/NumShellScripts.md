@@ -38,7 +38,7 @@ topology_template:
 
 |   | **Type** | **Description** |
 |---|---|---|
-**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Input:**| `str`| A TOSCA blueprint|
 **Output:**| `unsigned int`| The number of imports|
 **Exception:**| `TypeError`| If blueprint is empty or invalid|
 
@@ -46,7 +46,7 @@ topology_template:
 
 ## How to use
 
-Below an example on how to call the metric and the expected output for this example:
+Below an example on how to call the metric, and the expected output for this example:
 
 ```python
 from toscametrics.metrics.num_shell_scripts import NumShellScripts

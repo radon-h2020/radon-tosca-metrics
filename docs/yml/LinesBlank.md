@@ -30,7 +30,7 @@ The following example has **2 blank lines**.
 
 |   | **Type** | **Description** |
 |---|---|---|
-**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Input:**| `str`| A TOSCA blueprint|
 **Output:**| `unsigned int`| The number of blank lines|
 **Exception:**| `TypeError`| If the input file is not a valid TOSCA blueprint or is empty |
 
@@ -42,12 +42,11 @@ The following example has **2 blank lines**.
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from io import StringIO
 from toscametrics.yml.lines_blank import LinesBlank
 
-str = 'TODO' 
-yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
-print('Lines blank: ' + str(LinesBlank(yml).count()))
+yml = 'TODO' 
+yml = yml.expands(2)
+print('Lines blank: ' + LinesBlank(yml).count())
 
 >>> Lines blank: 2
 ```

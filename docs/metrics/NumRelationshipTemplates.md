@@ -42,7 +42,7 @@ topology_template:
 
 |   | **Type** | **Description** |
 |---|---|---|
-**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Input:**| `str`| A TOSCA blueprint|
 **Output:**| `unsigned int`| The number of relationship templates|
 **Exception:**| `TypeError`| If blueprint is empty or invalid|
 
@@ -55,11 +55,10 @@ topology_template:
 Below an example on how to call the metric, and the expected output for this example:
 
 ```python
-from io import StringIO
 from toscametrics.metrics.num_relationship_templates import NumRelationshipTemplates
 
-str = 'topology_template:\n\n  inputs:\n\n    mysql_rootpw:\n\n      type: string\n\n    mysql_port:\n\n      type: integer\n\n    # rest omitted here for brevity\n\n \n\n  node_templates:\n\n    db_server:\n\n      type: tosca.nodes.Compute\n\n      # rest omitted here for brevity\n\n \n\n    mysql:\n\n      type: tosca.nodes.DBMS.MySQL'
-yml = StringIO(str.expandtabs(2))  # substitute \t with 2 spaces and create the StringIO object
+yml = 'topology_template:\n\n  inputs:\n\n    mysql_rootpw:\n\n      type: string\n\n    mysql_port:\n\n      type: integer\n\n    # rest omitted here for brevity\n\n \n\n  node_templates:\n\n    db_server:\n\n      type: tosca.nodes.Compute\n\n      # rest omitted here for brevity\n\n \n\n    mysql:\n\n      type: tosca.nodes.DBMS.MySQL'
+yml = yml.expandtabs(2)
 print('Number of relationship templates: ' + NumRelationshipTemplates(yml).count())
 
 >>> Number of relationship templates: 2

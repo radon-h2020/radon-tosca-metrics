@@ -32,7 +32,7 @@ The following example has **2 commented lines of code**.
 
 |   | **Type** | **Description** |
 |---|---|---|
-**Input:**| `io.StringIO`| A TOSCA blueprint|
+**Input:**| `str`| A TOSCA blueprint|
 **Output:**| `unsigned int`| The number of lines of comments|
 **Exception:**| `TypeError`| If the input file is not a valid TOSCA blueprint or is empty |
 
@@ -45,11 +45,10 @@ The following example has **2 commented lines of code**.
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from io import StringIO
 from toscametrics.yml.lines_comment import LinesComment
 
-str = 'tasks:\n\t- name: Find all instances in the specified region\n\t\tali_instance_facts ...' 
-yml = StringIO(str.expands(2)) # substitute \t with 2 spaces and create the StringIO object
+yml = 'tasks:\n\t- name: Find all instances in the specified region\n\t\tali_instance_facts ...' 
+yml = yml.expands(2)
 print('Lines of comment: ' + LinesComment(yml).count())
 
 >>> Lines of comment: 2
