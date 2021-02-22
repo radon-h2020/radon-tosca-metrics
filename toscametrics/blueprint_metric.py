@@ -1,5 +1,4 @@
 import yaml
-from io import StringIO
 
 
 class BlueprintMetric:

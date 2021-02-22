@@ -2,8 +2,6 @@ import argparse
 import json
 import os
 import yaml
-import re
-from io import StringIO
 
 from toscametrics.metrics_extractor import extract_all
 
