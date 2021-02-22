@@ -13,13 +13,13 @@ from toscametrics.import_metrics import general_metrics
 class MetricCalculator():
 
     def __init__(self, path_list, metrics_type):
-        """Calculates all the metrics over a set of yaml files defined in a list containing
+        """Calculates all the blueprint over a set of yaml files defined in a list containing
         all the file paths"""
 
         valid_metrics_types = ['general', 'tosca', 'tosca_and_general']
 
         if not metrics_type in valid_metrics_types:
-            raise ValueError('Enter a valid metrics type (general, tosca, tosca_and_general)')
+            raise ValueError('Enter a valid blueprint type (general, tosca, tosca_and_general)')
         try:
             self.all_results = {}
             count = 0
@@ -34,12 +34,12 @@ class MetricCalculator():
         except:
             raise
 
-    #-------------Calculate metrics-------------
+    #-------------Calculate blueprint-------------
     def calculateMetrics(self, yml, metrics_type='tosca_and_general'):
         """
-        Executes metrics on a given script and returns a dictionary of results
+        Executes blueprint on a given script and returns a dictionary of results
         script: str  -- a StringIO object representing a IaC script in TOSCA
-        metrics: str -- possible options: 'general', 'tosca' or 'tosca_and_general'
+        blueprint: str -- possible options: 'general', 'tosca' or 'tosca_and_general'
         """
 
         metrics = general_metrics
@@ -51,7 +51,7 @@ class MetricCalculator():
         elif metrics_type == 'tosca_and_general':
             metrics = dict(list(general_metrics.items()) + list(tosca_metrics.items()))
 
-        # calculate metrics 
+        # calculate blueprint
         for name in metrics:
             try:
                 m = metrics[name](yml)
@@ -89,7 +89,7 @@ class MetricCalculator():
 
         return results
 
-    #-------------Append script metrics-------------
+    #-------------Append script blueprint-------------
     def appendMetrics(self, all_results, filePath, metrics_type='general'):
         try:
             with open(filePath, 'r') as file:

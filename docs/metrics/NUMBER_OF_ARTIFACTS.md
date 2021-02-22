@@ -46,7 +46,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.na import NA
+>>> from toscametrics.blueprint.na import NA
 
 >>> str = 'tosca_definitions_version: alien_dsl_2_0_0\n\ntopology_template:\n  node_templates:\n    Logstash:\n      type: org.ystia.logstash.linux.bash.nodes.Logstash\n      properties:\n        repository: { get_input: repository }\n      artifacts:\n        filters_conf:\n          file: config/logstash-apache-generator-filters.conf\n          type: tosca.artifacts.File'
 

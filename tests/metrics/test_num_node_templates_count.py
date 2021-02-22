@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.metrics.num_node_templates import NumNodeTemplates
+from toscametrics.blueprint.num_node_templates import NumNodeTemplates
 
 
 yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_0'

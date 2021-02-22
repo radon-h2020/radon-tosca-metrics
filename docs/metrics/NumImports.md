@@ -37,7 +37,7 @@ imports:
 Below an example on how to call the metric, and the expected output for this example:
 
 ```python
-from toscametrics.metrics.num_imports import NumImports
+from toscametrics.blueprint.num_imports import NumImports
 
 yml = 'imports:\n  - some_definition_file: path1/path2/some_defs.yaml\n  - another_definition_file:\n      file: path1/path2/file2.yaml\n      repository: my_service_catalog\n      namespace_uri: http://mycompany.com/tosca/1.0/platform\n      namespace_prefix: mycompany'
 yml = yml.expandtabs(2)

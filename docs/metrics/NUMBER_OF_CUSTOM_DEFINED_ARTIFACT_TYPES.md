@@ -45,7 +45,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.cdat import CDAT
+>>> from toscametrics.blueprint.cdat import CDAT
 
 >>> str = "tosca_definitions_version: tosca_simple_yaml_1_1\n\nartifact_types:\n\n  tosca.artifacts.Root:\n    metadata:\n      normative: 'true'\n      \n  tosca.artifacts.File:\n    metadata:\n      normative: 'true'"
 

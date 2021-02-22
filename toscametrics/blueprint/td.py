@@ -1,16 +1,16 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
-from toscametrics.metrics.nn import NN
-from toscametrics.metrics.nr import NR
-from toscametrics.metrics.npol import NPOL
-from toscametrics.metrics.ngro import NGRO
+from toscametrics.blueprint.nn import NN
+from toscametrics.blueprint.nr import NR
+from toscametrics.blueprint.npol import NPOL
+from toscametrics.blueprint.ngro import NGRO
 
-from toscametrics.metrics.cdnt import CDNT
-from toscametrics.metrics.cdrt import CDRT
-from toscametrics.metrics.cdat import CDAT
-from toscametrics.metrics.cdpt import CDPT
-from toscametrics.metrics.cdgt import CDGT
-from toscametrics.metrics.cdct import CDCT
-from toscametrics.metrics.cdit import CDIT
+from toscametrics.blueprint.cdnt import CDNT
+from toscametrics.blueprint.cdrt import CDRT
+from toscametrics.blueprint.cdat import CDAT
+from toscametrics.blueprint.cdpt import CDPT
+from toscametrics.blueprint.cdgt import CDGT
+from toscametrics.blueprint.cdct import CDCT
+from toscametrics.blueprint.cdit import CDIT
 
 from statistics import mean
 from statistics import median

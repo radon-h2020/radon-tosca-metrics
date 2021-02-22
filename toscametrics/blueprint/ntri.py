@@ -1,7 +1,7 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import keyValueList
-from toscametrics.metrics.npol import NPOL
-from toscametrics.metrics.cdpt import CDPT
+from toscametrics.blueprint.npol import NPOL
+from toscametrics.blueprint.cdpt import CDPT
 from io import StringIO
 
 class NTRI(BlueprintMetric):

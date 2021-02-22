@@ -50,7 +50,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.cdrt import CDRT
+>>> from toscametrics.blueprint.cdrt import CDRT
 
 >>> str = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ntopology_template:\n  relationship_templates:\n    storage_attachesto_1:\n      type: MyAttachesTo\n      properties:\n        location: /my_data_location\n\n  relationship_types:\n    MyAttachesTo:\n      derived_from: AttachesTo\n      interfaces:\n        some_interface_name:\n          some_operation:\n            implementation: default_script.sh\n'
 

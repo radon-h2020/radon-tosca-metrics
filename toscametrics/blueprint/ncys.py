@@ -2,10 +2,10 @@ from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getRelationshipTypes
 from toscametrics.utils import getNodeTypes
 from toscametrics.utils import keyValueList
-from toscametrics.metrics.cdnt import CDNT
-from toscametrics.metrics.cdrt import CDRT
-from toscametrics.metrics.nn import NN
-from toscametrics.metrics.nr import NR
+from toscametrics.blueprint.cdnt import CDNT
+from toscametrics.blueprint.cdrt import CDRT
+from toscametrics.blueprint.nn import NN
+from toscametrics.blueprint.nr import NR
 import re
 from io import StringIO
 

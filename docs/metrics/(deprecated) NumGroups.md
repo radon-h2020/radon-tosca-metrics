@@ -51,7 +51,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >> > from io import StringIO
->> > from toscametrics.metrics.gro import NGRO
+>> > from toscametrics.blueprint.gro import NGRO
 
 >> > str = 'tosca_definitions_version: tosca_simple_yaml_1_3\n\ntopology_template:\n  node_templates:\n    wordpress_server:\n      type: tosca.nodes.WebServer\n    mysql:\n      type: tosca.nodes.DBMS.MySQL\n\n  groups:\n    my_co_location_group:\n      type: tosca.groups.Root\n      members: [ wordpress_server, mysql ]\n\t  \n  policies:\n    - my_anti_collocation_policy:\n        type: my.policies.anticolocateion\n        targets: [ my_co_location_group ]'
 

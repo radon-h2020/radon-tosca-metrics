@@ -1,7 +1,7 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getOperations
-from toscametrics.metrics.nif import NIF
-from toscametrics.metrics.cdit import CDIT
+from toscametrics.blueprint.nif import NIF
+from toscametrics.blueprint.cdit import CDIT
 
 from io import StringIO
 

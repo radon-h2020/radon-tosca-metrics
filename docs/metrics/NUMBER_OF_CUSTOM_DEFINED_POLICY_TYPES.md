@@ -48,7 +48,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.cdpt import CDPT
+>>> from toscametrics.blueprint.cdpt import CDPT
 
 >>> str = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\nnode_types:\n  tosca.nodes.Root:\n    attributes:\n      tosca_id:\n        type: string\n      tosca_name:\n        type: string\n\npolicy_types:\n  mycompany.mytypes.policies.placement.Container.Linux:\n    description: My companyâ€™s placement policy for linux\n    derived_from: tosca.policies.Root\n'
 

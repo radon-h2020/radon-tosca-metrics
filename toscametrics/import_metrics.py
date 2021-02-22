@@ -1,4 +1,4 @@
-#General metrics
+#General blueprint
 from toscametrics.general.lines_blank import LinesBlank
 from toscametrics.general.lines_comment import LinesComment
 from toscametrics.general.lines_code import LinesCode
@@ -18,43 +18,43 @@ general_metrics = {
     }
 
 """  
-#Tosca metrics
-from toscametrics.metrics.na import NA
-from toscametrics.metrics.nc import NC
-from toscametrics.metrics.ni import NI
-from toscametrics.metrics.nif import NIF
-from toscametrics.metrics.ninp import NINP
-from toscametrics.metrics.ninpc import NINPC
-from toscametrics.metrics.nn import NN
-from toscametrics.metrics.nout import NOUT
-from toscametrics.metrics.np import NP
-from toscametrics.metrics.nr import NR
-from toscametrics.metrics.ttb import TTB
-from toscametrics.metrics.cdnt import CDNT
-from toscametrics.metrics.cdrt import CDRT
-from toscametrics.metrics.cdat import CDAT
-from toscametrics.metrics.cdct import CDCT
-from toscametrics.metrics.cddt import CDDT
-from toscametrics.metrics.cdgt import CDGT
-from toscametrics.metrics.cdit import CDIT
-from toscametrics.metrics.cdpt import CDPT
-from toscametrics.metrics.nw import NW
-from toscametrics.metrics.tdb import TDB
-from toscametrics.metrics.nrq import NRQ
-from toscametrics.metrics.nsh import NSH
-from toscametrics.metrics.ncys import NCYS
-from toscametrics.metrics.tob import TOB
-from toscametrics.metrics.ngro import NGRO
-from toscametrics.metrics.npol import NPOL
-from toscametrics.metrics.nf import NF
-from toscametrics.metrics.td import TD
-from toscametrics.metrics.au import AU
-from toscametrics.metrics.nac import NAC
-from toscametrics.metrics.nfunc import NFUNC
-from toscametrics.metrics.noam import NOAM
-from toscametrics.metrics.nop import NOP
-from toscametrics.metrics.ntri import NTRI
-from toscametrics.metrics.tett import TETT
+#Tosca blueprint
+from toscametrics.blueprint.na import NA
+from toscametrics.blueprint.nc import NC
+from toscametrics.blueprint.ni import NI
+from toscametrics.blueprint.nif import NIF
+from toscametrics.blueprint.ninp import NINP
+from toscametrics.blueprint.ninpc import NINPC
+from toscametrics.blueprint.nn import NN
+from toscametrics.blueprint.nout import NOUT
+from toscametrics.blueprint.np import NP
+from toscametrics.blueprint.nr import NR
+from toscametrics.blueprint.ttb import TTB
+from toscametrics.blueprint.cdnt import CDNT
+from toscametrics.blueprint.cdrt import CDRT
+from toscametrics.blueprint.cdat import CDAT
+from toscametrics.blueprint.cdct import CDCT
+from toscametrics.blueprint.cddt import CDDT
+from toscametrics.blueprint.cdgt import CDGT
+from toscametrics.blueprint.cdit import CDIT
+from toscametrics.blueprint.cdpt import CDPT
+from toscametrics.blueprint.nw import NW
+from toscametrics.blueprint.tdb import TDB
+from toscametrics.blueprint.nrq import NRQ
+from toscametrics.blueprint.nsh import NSH
+from toscametrics.blueprint.ncys import NCYS
+from toscametrics.blueprint.tob import TOB
+from toscametrics.blueprint.ngro import NGRO
+from toscametrics.blueprint.npol import NPOL
+from toscametrics.blueprint.nf import NF
+from toscametrics.blueprint.td import TD
+from toscametrics.blueprint.au import AU
+from toscametrics.blueprint.nac import NAC
+from toscametrics.blueprint.nfunc import NFUNC
+from toscametrics.blueprint.noam import NOAM
+from toscametrics.blueprint.nop import NOP
+from toscametrics.blueprint.ntri import NTRI
+from toscametrics.blueprint.tett import TETT
 
 
 

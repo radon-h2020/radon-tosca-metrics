@@ -8,9 +8,9 @@ with open("requirements.txt", "r") as reqs_file:
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setup(name='tosca-metrics',
+setup(name='tosca-blueprint',
       version='0.0.6',
-      description='A module to extract metrics rom TOSCA blueprints',
+      description='A module to extract blueprint rom TOSCA blueprints',
       long_description=long_description,
       long_description_content_type="text/markdown",
       author='Stefano Dalla Palma',
@@ -18,7 +18,7 @@ setup(name='tosca-metrics',
       author_email='stefano.dallapalma0@gmail.com',
       packages=find_packages(exclude=('test',)),
       entry_points = {
-        'console_scripts': ['tosca-metrics=toscametrics.command_line:cli'],
+        'console_scripts': ['tosca-blueprint=toscametrics.command_line:cli'],
       },
       classifiers=[
           "Development Status :: 3 - Alpha",

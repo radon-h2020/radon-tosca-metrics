@@ -59,7 +59,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.cddt import CDDT
+>>> from toscametrics.blueprint.cddt import CDDT
 
 >>> str = 'tosca_definitions_version: tosca_simple_yaml_1_1\n\ndata_types:\n  NetworkInfo:\n    derived_from: tosca.Data.Root\n    properties:\n      name:\n        type: string\n      gateway:\n        type: string      \n\n  RouterInfo:\n    derived_from: tosca.Data.Root\n    properties:\n      ip:\n        type: string\n      external:\n        type: string\n\ntopology_template:\n  inputs:\n    management_network:\n      type: NetworkInfo\n    router:\n      type: RouterInfo'
 

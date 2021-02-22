@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.metrics.num_shell_scripts import NumShellScripts
+from toscametrics.blueprint.num_shell_scripts import NumShellScripts
 
 yaml_1 = 'tosca_definitions_version: tosca_simple_yaml_1_3\n\ndescription: Template for deploying a single server ' \
          'with MySQL software on top.\n\ntopology_template:\n\tnode_templates:\n\t\tdb_server:\n\t\t\ttype: ' \

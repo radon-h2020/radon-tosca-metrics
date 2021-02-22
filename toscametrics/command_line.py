@@ -11,12 +11,12 @@ VERSION = '0.0.6'
 
 
 def get_parser():
-    description = 'Extract metrics from TOSCA blueprints.'
+    description = 'Extract blueprint from TOSCA blueprints.'
 
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument(action='store', dest='src', help='source file (Tosca blueprint) or directory')
-    parser.add_argument('--omit-zero-metrics', dest='omit_zero_metrics', action='store_true',
-                        help='omit metrics with value equal 0')
+    parser.add_argument('--omit-zero-blueprint', dest='omit_zero_metrics', action='store_true',
+                        help='omit blueprint with value equal 0')
     parser.add_argument('-d', '--dest', help='destination path to save results')
     parser.add_argument('-o', '--output', action='store_true', help='shows output')
     parser.add_argument('-v', '--version', action='version', version='%(prog)s ' + VERSION)
@@ -104,7 +104,7 @@ def cli():
             metrics = extract_all(script)
             metrics['filepath'] = file_path
 
-            if args.omit_zero_metrics:  # Show only non-zero metrics
+            if args.omit_zero_metrics:  # Show only non-zero blueprint
                 metrics = {k: v for k, v in metrics.items() if v != 0}
 
             if args.dest:

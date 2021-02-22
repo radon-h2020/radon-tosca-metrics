@@ -55,7 +55,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.cdgt import CDGT
+>>> from toscametrics.blueprint.cdgt import CDGT
 
 >>> str = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\nnode_types:\n  tosca.nodes.Root:\n    attributes:\n      tosca_id:\n        type: string\n      tosca_name:\n        type: string\n\n  tosca.nodes.Compute:\n    attributes:\n      private_address:\n        type: string\n      public_address:\n        type: string\n        \ngroup_types:\n  mycompany.mytypes.groups.placement:\n    description: My companyâ€™s group type for placing nodes of type Compute\n    members: [ tosca.nodes.Compute ]\n'
 

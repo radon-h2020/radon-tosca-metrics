@@ -57,7 +57,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.cdnt import CDNT
+>>> from toscametrics.blueprint.cdnt import CDNT
 
 >>> str = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\nnode_types:\n\n  tosca.nodes.Root:\n    attributes:\n      tosca_id:\n        type: string\n      tosca_name:\n        type: string\n\n  tosca.nodes.Abstract.Compute:\n    derived_from: tosca.nodes.Root\n    capabilities:\n      host:\n        type: tosca.capabilities.Compute\n\n  tosca.nodes.Compute:\n    attributes:\n      private_address:\n        type: string\n      public_address:\n        type: string\n'
 

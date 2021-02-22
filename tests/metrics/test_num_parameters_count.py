@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.metrics.num_parameters import NumParameters
+from toscametrics.blueprint.num_parameters import NumParameters
 
 yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\nimports:\n  - paypalpizzastore_nodejs_app.yaml'
 yaml_5 = 'inputs:\n\tdb_host: { get_attribute: [ db_server, private_address ] }\n\tdb_port: { get_property: [ mysql, ' \

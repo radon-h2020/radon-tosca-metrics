@@ -41,7 +41,7 @@ inputs:
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from toscametrics.metrics.num_parameters import NumParameters
+from toscametrics.blueprint.num_parameters import NumParameters
 
 yml = 'inputs:\n\tdb_host: { get_attribute: [ db_server, private_address ] }\n\tdb_port: { get_property: [ mysql, port ] }\n\tdb_name: { get_property: [ wordpress_db, name ] }\n\tdb_user: { get_property: [ wordpress_db, user ] }\n\tdb_password: { get_property: [ wordpress_db, password ] }'
 interface = yml.expandtabs(2)  # substitute \t with 2 spaces and create the StringIO object

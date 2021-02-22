@@ -59,7 +59,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.nf import NF
+>>> from toscametrics.blueprint.nf import NF
 
 >>> str = 'tosca_definitions_version: tosca_simple_yaml_1_3\n             \ndescription: Template with requirements against hosting infrastructure.\n\ntopology_template:\n  node_templates:\n    mysql:\n      type: tosca.nodes.DBMS.MySQL\n      requirements:\n        - host: mysql_compute\n\n    mysql_compute:\n      type: Compute\n      directives: [ select ]\n      node_filter:\n        capabilities:\n          - host:\n              properties:\n                num_cpus: { equal: 2 }\n                mem_size: { greater_or_equal: 2 GB }\n          - os:\n              properties:\n                architecture: { equal: x86_64 }\n                type: linux\n                distribution: ubuntu'
 

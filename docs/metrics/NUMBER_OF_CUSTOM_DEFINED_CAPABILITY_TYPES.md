@@ -43,7 +43,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.cdct import CDCT
+>>> from toscametrics.blueprint.cdct import CDCT
 
 >>> str = "tosca_definitions_version: tosca_simple_yaml_1_1\n\ncapability_types:\n\n  tosca.capabilities.Root:\n    metadata:\n      normative: 'true'\n      citation: '[TOSCA-Simple-Profile-YAML-v1.1]'\n      citation_location: 5.5.1"
 

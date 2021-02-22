@@ -47,7 +47,7 @@ topology_template:
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from toscametrics.metrics.num_node_templates import NumNodeTemplates
+from toscametrics.blueprint.num_node_templates import NumNodeTemplates
 
 yml = 'topology_template:\n\n  inputs:\n\n    mysql_rootpw:\n\n      type: string\n\n    mysql_port:\n\n      type: integer\n\n    # rest omitted here for brevity\n\n \n\n  node_templates:\n\n    db_server:\n\n      type: tosca.nodes.Compute\n\n      # rest omitted here for brevity\n\n \n\n    mysql:\n\n      type: tosca.nodes.DBMS.MySQL'
 yml = yml.expandtabs(2)

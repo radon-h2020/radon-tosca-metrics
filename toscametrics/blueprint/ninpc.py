@@ -1,6 +1,6 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import keyValueList
-from toscametrics.metrics.ninp import NINP
+from toscametrics.blueprint.ninp import NINP
 from io import StringIO
 
 class NINPC(BlueprintMetric):

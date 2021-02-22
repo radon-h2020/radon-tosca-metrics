@@ -43,7 +43,7 @@ Below an example on how to call the metric and the expected output for this exam
 
 ```python
 >>> from io import StringIO
->>> from toscametrics.metrics.ngc import NGC
+>>> from toscametrics.blueprint.ngc import NGC
 
 >>> str = 'tosca_definitions_version: alien_dsl_2_0_0\n\nnode_types:\n  org.ystia.mysql.linux.bash.nodes.MySQLServer:\n    derived_from: org.ystia.nodes.DBMS\n    description: MySQL Server component for linux\n    capabilities:\n      host:\n        type: org.ystia.mysql.pub.capabilities.Container.MySQLServer'
 

@@ -2,12 +2,12 @@ from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getNodeTemplates
 from toscametrics.general.loc import LOC
 
-from toscametrics.metrics.na import NA
-from toscametrics.metrics.nn import NN
-from toscametrics.metrics.nr import NR
-from toscametrics.metrics.npol import NPOL
-from toscametrics.metrics.ngro import NGRO
-from toscametrics.metrics.nw import NW
+from toscametrics.blueprint.na import NA
+from toscametrics.blueprint.nn import NN
+from toscametrics.blueprint.nr import NR
+from toscametrics.blueprint.npol import NPOL
+from toscametrics.blueprint.ngro import NGRO
+from toscametrics.blueprint.nw import NW
 
 from io import StringIO
 

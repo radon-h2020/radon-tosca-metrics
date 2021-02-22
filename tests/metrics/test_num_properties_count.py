@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.metrics.num_properties import NumProperties
+from toscametrics.blueprint.num_properties import NumProperties
 
 
 yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\nimports:\n  - paypalpizzastore_nodejs_app.yaml'

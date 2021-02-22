@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.metrics.num_node_types import NumNodeTypes
+from toscametrics.blueprint.num_node_types import NumNodeTypes
 
 
 yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_0'
