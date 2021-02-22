@@ -1,7 +1,7 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getArtifacts
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.etp import ETP
+from toscametrics.general.loc import LOC
+from toscametrics.general.etp import ETP
 
 from io import StringIO
 
@@ -76,13 +76,13 @@ class NA(BlueprintMetric):
 
 # from io import StringIO
 
-# path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\SeaCloudsEU\SeaCloudsPlatform\Industry\splittednuro_adp-iaas.yml'
+# path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\SeaCloudsEU\SeaCloudsPlatform\Industry\splittednuro_adp-iaas.general'
 # with open(path, 'r') as file:
-#             yml = file.read()
-#             print(yml)
+#             general = file.read()
+#             print(general)
 
-# yml = StringIO(yml.expandtabs(2)) 
-# metric = NA(yml)
+# general = StringIO(general.expandtabs(2))
+# metric = NA(general)
 
 # print('NA count: ', metric.count())
 # print(metric._get_elements())

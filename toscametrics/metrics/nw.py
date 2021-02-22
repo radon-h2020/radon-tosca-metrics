@@ -1,7 +1,7 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getWorkflows
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.etp import ETP
+from toscametrics.general.loc import LOC
+from toscametrics.general.etp import ETP
 
 from io import StringIO
 
@@ -77,8 +77,8 @@ class NW(BlueprintMetric):
 # from io import StringIO
 
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NW(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NW(general)
 
 # print('NW count: ', metric.entropy())
 

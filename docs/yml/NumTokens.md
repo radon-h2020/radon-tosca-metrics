@@ -42,7 +42,7 @@ topology_template:
 Below an example on how to call the metric, and the expected output for this example:
 
 ```python
-from toscametrics.yml.num_tokens import NumTokens
+from toscametrics.general.num_tokens import NumTokens
 
 yml = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template for deploying a single server with predefined properties.\n\ntopology_template:\n  inputs:\n    cpus:\n      type: integer\n      description: Number of CPUs for the server.\n      constraints:\n        - valid_values: [ 1, 2, 4, 8 ]'
 yml = yml.expands(2)  # substitute \t with 2 spaces and create the StringIO object

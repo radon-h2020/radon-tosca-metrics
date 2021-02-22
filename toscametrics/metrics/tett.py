@@ -1,6 +1,6 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getNodeTemplates
-from toscametrics.yml.loc import LOC
+from toscametrics.general.loc import LOC
 
 from toscametrics.metrics.na import NA
 from toscametrics.metrics.nn import NN
@@ -55,7 +55,7 @@ class TETT(BlueprintMetric):
 
 # string = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template for deploying a single server with predefined properties.\n\ntopology_template:\n  inputs:\n    cpus:\n      type: integer\n      description: Number of CPUs for the server.\n      constraints:\n        - valid_values: [ 1, 2, 4, 8 ]\n\n  node_templates:\n    my_server:\n      type: tosca.nodes.Compute\n      capabilities:\n        # Host container properties\n        host:\n          properties:\n            # Compute properties\n            num_cpus: { get_input: cpus }\n            mem_size: 2048  MB\n            disk_size: 10 GB'
 # print(string)
-# yml = StringIO(string) 
-# metric = TETT(yml)
+# general = StringIO(string)
+# metric = TETT(general)
 # metric.relative()
 

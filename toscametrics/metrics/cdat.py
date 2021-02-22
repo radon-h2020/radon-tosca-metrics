@@ -1,6 +1,6 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.etp import ETP
+from toscametrics.general.loc import LOC
+from toscametrics.general.etp import ETP
 
 from io import StringIO
 
@@ -75,8 +75,8 @@ class CDAT(BlueprintMetric):
 # #     string = file.read()
 
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = CDAT(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = CDAT(general)
 
 # # print('CDAT count: ', metric.count())
 # metric.entropy()

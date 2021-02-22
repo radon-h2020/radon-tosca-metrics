@@ -45,7 +45,7 @@ The following example has **2 commented lines of code**.
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from toscametrics.yml.lines_comment import LinesComment
+from toscametrics.general.lines_comment import LinesComment
 
 yml = 'tasks:\n\t- name: Find all instances in the specified region\n\t\tali_instance_facts ...' 
 yml = yml.expands(2)

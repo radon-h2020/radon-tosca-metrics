@@ -42,7 +42,7 @@ The following example has **8 source lines of code**.
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from toscametrics.yml.lines_code import LinesCode
+from toscametrics.general.lines_code import LinesCode
 
 blueprint = 'TODO' 
 blueprint = blueprint.expands(2)

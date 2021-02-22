@@ -35,7 +35,7 @@ class NFUNC(BlueprintMetric):
 # print(string)
 # from io import StringIO
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NFUNC(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NFUNC(general)
 
 # print('check NFUNC: ', metric.count())

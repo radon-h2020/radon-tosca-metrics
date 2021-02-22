@@ -1,6 +1,6 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.etp import ETP
+from toscametrics.general.loc import LOC
+from toscametrics.general.etp import ETP
 
 from io import StringIO
 
@@ -70,7 +70,7 @@ class CDRT(BlueprintMetric):
 # from io import StringIO
 
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = CDRT(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = CDRT(general)
 
 # print('CDRT count: ', metric.relative())

@@ -32,7 +32,7 @@ class NOAM(BlueprintMetric):
 # print(string)
 # from io import StringIO
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NOAM(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NOAM(general)
 
 # print('check NOAM: ', metric.count())

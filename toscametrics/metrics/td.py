@@ -141,15 +141,15 @@ class TD(BlueprintMetric):
 
 # path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\NSO-developer\nfvo-converter-tosca-sol6\Example\Tosca_vPE.yaml'
 # #path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\radon-h2020\radon-particles\Industry\ServiceTemplate.yaml'
-# #path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\ystia\forge\Industry\types_12.yml'
+# #path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\ystia\forge\Industry\types_12.general'
 # #path = r'C:\Users\s145559\OneDrive - TU Eindhoven\School\JADS\Jaar 2\Thesis\RADON PROJECT\GIT projects\ANALYSIS\dataminer\tmp\tliron\puccini\Industry\relationships_3.yaml'
 # with open(path, 'r') as file:
 #     string = file.read()
 
 # #string = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\nnode_types:\n\n  tosca.nodes.Root:\n    attributes:\n      tosca_id:\n        type: string\n      tosca_name:\n        type: string\n\n  tosca.nodes.Abstract.Compute:\n    derived_from: tosca.nodes.Root\n    capabilities:\n      host:\n        type: tosca.capabilities.Compute\n\n  tosca.nodes.Compute:\n    attributes:\n      private_address:\n        type: string\n      public_address:\n        type: string\n'
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = TD(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = TD(general)
 # print('min: ', metric.min())
 # print('max: ', metric.max())
 # print('mean: ', metric.mean())

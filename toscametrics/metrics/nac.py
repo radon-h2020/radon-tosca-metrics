@@ -31,7 +31,7 @@ class NAC(BlueprintMetric):
 # print(string)
 # from io import StringIO
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NAC(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NAC(general)
 
 # print('check NAC: ', metric.count())

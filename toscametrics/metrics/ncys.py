@@ -32,7 +32,7 @@ class NCYS(BlueprintMetric):
                     for _, element_values in element.items():
 
                         splitted_dict = keyValueList(element_values)
-                        operands = [re.findall(r'.yaml|.yml', tup[1]) for tup in splitted_dict if isinstance(tup[1], str)]                    
+                        operands = [re.findall(r'.yaml|.general', tup[1]) for tup in splitted_dict if isinstance(tup[1], str)]
                         flattern = [item for sublist in operands for item in sublist]
                         calls.extend(flattern)
 
@@ -56,7 +56,7 @@ class NCYS(BlueprintMetric):
 
 # print(string)
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NCYS(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NCYS(general)
 
 # print('NCYS count: ', metric.count())

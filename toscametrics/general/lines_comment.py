@@ -1,6 +1,6 @@
 import re
 
-from toscametrics.yml.lines_code import LinesCode
+from toscametrics.general.lines_code import LinesCode
 
 
 class LinesComment(LinesCode):

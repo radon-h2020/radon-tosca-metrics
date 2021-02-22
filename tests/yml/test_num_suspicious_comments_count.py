@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.yml.num_suspicious_comments import NumSuspiciousComments
+from toscametrics.general.num_suspicious_comments import NumSuspiciousComments
 
 yaml_0 = 'topology_template:\n  node_templates:\n    my_server:\n      type: tosca.nodes.Compute\n\t  \n    ' \
            'cluster:\n      type: tosca.nodes.DBMS.Cluster\n      requirements:\n        - host: my_server\n      ' \

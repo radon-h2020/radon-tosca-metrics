@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.yml.num_tokens import NumTokens
+from toscametrics.general.num_tokens import NumTokens
 
 yaml_12_1 = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template for deploying a single server ' \
             'with predefined properties. '

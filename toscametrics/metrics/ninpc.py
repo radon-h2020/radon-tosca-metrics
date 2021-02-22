@@ -31,8 +31,8 @@ class NINPC(BlueprintMetric):
 # from io import StringIO
 # string = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Template for deploying a single server with predefined properties.\n\ntopology_template:\n  inputs:\n    cpus:\n      type: integer\n      description: Number of CPUs for the server.\n      constraints:\n        - valid_values: [ 1, 2, 4, 8 ]\n        - less_than: 10'
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NINPC(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NINPC(general)
 
 # print('NINPC count: ', metric.count())
 

@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.yml.num_keys import NumKeys
+from toscametrics.general.num_keys import NumKeys
 
 yaml_2_1 = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\ndescription: Template for deploying a single server ' \
            'with MySQL software on top. '

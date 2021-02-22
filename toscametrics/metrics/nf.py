@@ -21,7 +21,7 @@ class NF(BlueprintMetric):
 # print(string)
 # from io import StringIO
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NF(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NF(general)
 
 # print('check NF: ', metric.count())

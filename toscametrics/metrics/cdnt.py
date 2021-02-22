@@ -1,6 +1,6 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.etp import ETP
+from toscametrics.general.loc import LOC
+from toscametrics.general.etp import ETP
 
 from io import StringIO
 
@@ -74,8 +74,8 @@ class CDNT(BlueprintMetric):
 #     string = file.read()
 
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = CDNT(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = CDNT(general)
 
 # print('CDNT count: ', metric.count())
 # x = metric._get_elements()

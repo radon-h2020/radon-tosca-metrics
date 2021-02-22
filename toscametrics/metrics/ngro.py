@@ -1,7 +1,7 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getGroups
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.etp import ETP
+from toscametrics.general.loc import LOC
+from toscametrics.general.etp import ETP
 
 from io import StringIO
 
@@ -79,8 +79,8 @@ class NGRO(BlueprintMetric):
 # print(string)
 # from io import StringIO
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NGRO(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NGRO(general)
 
 # print(metric._get_elements())
 # print('check NGRO: ', metric.count())

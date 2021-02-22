@@ -55,7 +55,7 @@ def load_dir(input_dir: str) -> dict:
             
             if file_extension == 'tosca':
                 yml_files.append(item)
-            elif file_extension in ['.yml', '.yaml']:
+            elif file_extension in ['.general', '.yaml']:
                 with open(item, 'r') as f:
                     if 'tosca_definitions_version' in f.read():
                         yml_files.append(item)

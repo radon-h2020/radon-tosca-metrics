@@ -1,7 +1,7 @@
 from toscametrics.blueprint.blueprint_metric import BlueprintMetric
 from toscametrics.utils import getPolicies
-from toscametrics.yml.loc import LOC
-from toscametrics.yml.etp import ETP
+from toscametrics.general.loc import LOC
+from toscametrics.general.etp import ETP
 
 from io import StringIO
 
@@ -78,8 +78,8 @@ class NPOL(BlueprintMetric):
 # print(string)
 # from io import StringIO
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NPOL(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NPOL(general)
 
 # print(metric._get_elements())
 # print('check NPOL: ', metric.count())

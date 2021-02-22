@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized_class
-from toscametrics.yml.text_entropy import TextEntropy
+from toscametrics.general.text_entropy import TextEntropy
 
 blueprint = 'tosca_definitions_version: tosca_simple_yaml_1_0\ndescription: Template for deploying server\n' \
              'topology_template:\n\tinputs:\n\t\tcpus:\n\t\t\ttype: integer'

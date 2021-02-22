@@ -91,8 +91,8 @@ class NOP(BlueprintMetric):
 # #     string = file.read()
 
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NOP(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NOP(general)
 
 # print('NOP count: ', metric.count())
 # x = metric._get_elements()

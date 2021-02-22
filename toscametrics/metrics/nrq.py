@@ -161,8 +161,8 @@ class NRQ(BlueprintMetric):
 
 # print(string)
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = NRQ(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = NRQ(general)
 
 # print('count: ', metric.count())
 # print('min: ', metric.min())

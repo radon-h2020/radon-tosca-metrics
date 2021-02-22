@@ -1,11 +1,11 @@
 #General metrics
-from toscametrics.yml.lines_blank import LinesBlank
-from toscametrics.yml.lines_comment import LinesComment
-from toscametrics.yml.lines_code import LinesCode
-from toscametrics.yml.num_keys import NumKeys
-from toscametrics.yml.num_suspicious_comments import NumSuspiciousComments
-from toscametrics.yml.num_tokens import NumTokens
-from toscametrics.yml.text_entropy import TextEntropy
+from toscametrics.general.lines_blank import LinesBlank
+from toscametrics.general.lines_comment import LinesComment
+from toscametrics.general.lines_code import LinesCode
+from toscametrics.general.num_keys import NumKeys
+from toscametrics.general.num_suspicious_comments import NumSuspiciousComments
+from toscametrics.general.num_tokens import NumTokens
+from toscametrics.general.text_entropy import TextEntropy
 
 general_metrics = {
     'lines_code'   :   LinesCode, 

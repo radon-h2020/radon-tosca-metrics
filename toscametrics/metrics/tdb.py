@@ -20,6 +20,6 @@ class TDB(BlueprintMetric):
 
 # from io import StringIO
 
-# yml = StringIO(string.expandtabs(2)) 
-# metric = TDB(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = TDB(general)
 

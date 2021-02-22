@@ -29,8 +29,8 @@ class AU(BlueprintMetric):
 # from io import StringIO
 
 # print(string)
-# yml = StringIO(string.expandtabs(2)) 
-# metric = AU(yml)
+# general = StringIO(string.expandtabs(2))
+# metric = AU(general)
 
 
 # print('AU count: ', metric.count())

@@ -42,7 +42,7 @@ The following example has **2 blank lines**.
 Below an example on how to call the metric and the expected output for this example:
 
 ```python
-from toscametrics.yml.lines_blank import LinesBlank
+from toscametrics.general.lines_blank import LinesBlank
 
 yml = 'TODO' 
 yml = yml.expands(2)
