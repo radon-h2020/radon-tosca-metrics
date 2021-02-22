@@ -9,12 +9,12 @@ VERSION = '0.0.6'
 
 
 def get_parser():
-    description = 'Extract blueprint from TOSCA blueprints.'
+    description = 'Extract metrics from TOSCA blueprints.'
 
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument(action='store', dest='src', help='source file (Tosca blueprint) or directory')
-    parser.add_argument('--omit-zero-blueprint', dest='omit_zero_metrics', action='store_true',
-                        help='omit blueprint with value equal 0')
+    parser.add_argument('--omit-zero-metrics', dest='omit_zero_metrics', action='store_true',
+                        help='omit metrics with value equal 0')
     parser.add_argument('-d', '--dest', help='destination path to save results')
     parser.add_argument('-o', '--output', action='store_true', help='shows output')
     parser.add_argument('-v', '--version', action='version', version='%(prog)s ' + VERSION)
@@ -25,7 +25,6 @@ def get_parser():
 def load_file(path: str) -> str:
     """ Returns a String object representing the content of the file at <path>, if any; None otherwise """
     if os.path.isfile(path):
-        content = ''
         with open(path, 'r') as file:
             content = file.read()
 
@@ -53,7 +52,7 @@ def load_dir(input_dir: str) -> dict:
             
             if file_extension == 'tosca':
                 yml_files.append(item)
-            elif file_extension in ['.general', '.yaml']:
+            elif file_extension in ('.yml', '.yaml'):
                 with open(item, 'r') as f:
                     if 'tosca_definitions_version' in f.read():
                         yml_files.append(item)
@@ -102,7 +101,7 @@ def cli():
             metrics = extract_all(script)
             metrics['filepath'] = file_path
 
-            if args.omit_zero_metrics:  # Show only non-zero blueprint
+            if args.omit_zero_metrics:  # Show only non-zero metrics
                 metrics = {k: v for k, v in metrics.items() if v != 0}
 
             if args.dest:
