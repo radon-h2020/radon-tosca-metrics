@@ -1,7 +1,6 @@
 import unittest
 from enum import Enum
 from parameterized import parameterized_class
-from io import StringIO
 
 from toscametrics.yml.lines_code import LinesCode
 
@@ -24,10 +23,7 @@ class Raised(Enum):
 class TestLOCInit(unittest.TestCase):
 
     def setUp(self):
-        self.yaml = StringIO(self.yaml.expandtabs(2))
-
-    def tearDown(self):
-        self.yaml.close()
+        self.yaml = self.yaml.expandtabs(2)
 
     def test(self):
         raised = Raised.FALSE

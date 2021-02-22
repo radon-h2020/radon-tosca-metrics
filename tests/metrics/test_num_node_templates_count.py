@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.metrics.num_node_templates import NumNodeTemplates
 
 
@@ -16,6 +15,7 @@ yaml_2 = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\ndescription: Templ
            ' \n    mysql_port:\n      type: integer\n    \n  node_templates:\n    db_server:\n      type: ' \
            'tosca.nodes.Compute\n      \n    mysql:\n      type: tosca.nodes.DBMS.MySQL '
 
+
 @parameterized_class([
    {'yaml': yaml_0, 'expected': 0},
    {'yaml': yaml_1, 'expected': 1},
@@ -23,11 +23,8 @@ yaml_2 = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\ndescription: Templ
 ])
 class TestNumNodeTemplatesCount(unittest.TestCase):
     def setUp(self):
-        self.blueprint = StringIO(self.yaml.expandtabs(2))
+        self.blueprint = self.yaml.expandtabs(2)
 
-    def tearDown(self):
-        self.blueprint.close()
-    
     def test(self):
         self.assertEqual(NumNodeTemplates(self.blueprint).count(), self.expected)
 

@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.yml.lines_code import LinesCode
 
 yaml_8_1 = '---\n- hosts: localhost\n\n\ttasks:\n\t- name: task 1    # This is the first ' \
@@ -14,10 +13,7 @@ yaml_8_1 = '---\n- hosts: localhost\n\n\ttasks:\n\t- name: task 1    # This is t
 class TestLOCCount(unittest.TestCase):
 
     def setUp(self):
-        self.yaml = StringIO(self.yaml.expandtabs(2))
-
-    def tearDown(self):
-        self.yaml.close()
+        self.yaml = self.yaml.expandtabs(2)
 
     def test(self):
         self.assertEqual(LinesCode(self.yaml).count(), self.expected)

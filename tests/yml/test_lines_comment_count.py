@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.yml.lines_comment import LinesComment
 
 yaml_0_1 = '---\n- hosts: localhost\n\n\ttasks:\n\t- name: task 1\n\t\tinclude_vars:\n\t\t\tfile: ' \
@@ -17,10 +16,7 @@ yaml_2_1 = '---\n- hosts: localhost\n\n\ttasks:\n\t- name: task 1    # This is t
 class TestLinesCommentCount(unittest.TestCase):
 
     def setUp(self):
-        self.yaml = StringIO(self.yaml.expandtabs(2))
-
-    def tearDown(self):
-        self.yaml.close()
+        self.yaml = self.yaml.expandtabs(2)
 
     def test(self):
         self.assertEqual(LinesComment(self.yaml).count(), self.expected)

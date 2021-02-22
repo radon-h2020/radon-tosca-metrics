@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.yml.text_entropy import TextEntropy
 
 blueprint = 'tosca_definitions_version: tosca_simple_yaml_1_0\ndescription: Template for deploying server\n' \
@@ -13,10 +12,7 @@ blueprint = 'tosca_definitions_version: tosca_simple_yaml_1_0\ndescription: Temp
 class TestTextEntropyCount(unittest.TestCase):
 
     def setUp(self):
-        self.blueprint = StringIO(self.yaml.expandtabs(2))
-
-    def tearDown(self):
-        self.blueprint.close()
+        self.blueprint = self.yaml.expandtabs(2)
 
     def test(self):
         self.assertEqual(TextEntropy(self.blueprint).count(), self.expected)

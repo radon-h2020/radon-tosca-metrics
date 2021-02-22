@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.yml.lines_blank import LinesBlank
 
 yaml_0_1 = '---\n- hosts: localhost\n\ttasks:\n\t- name: task 1    # This is the first ' \
@@ -18,10 +17,7 @@ yaml_2_1 = '---\n- hosts: localhost\n\n\ttasks:\n\t- name: task 1    # This is t
 class TestLinesBlankCount(unittest.TestCase):
 
     def setUp(self):
-        self.yaml = StringIO(self.yaml.expandtabs(2))
-
-    def tearDown(self):
-        self.yaml.close()
+        self.yaml = self.yaml.expandtabs(2)
 
     def test(self):
         self.assertEqual(LinesBlank(self.yaml).count(), self.expected)

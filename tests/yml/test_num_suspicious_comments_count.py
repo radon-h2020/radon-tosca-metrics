@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.yml.num_suspicious_comments import NumSuspiciousComments
 
 yaml_0 = 'topology_template:\n  node_templates:\n    my_server:\n      type: tosca.nodes.Compute\n\t  \n    ' \
@@ -17,16 +16,13 @@ yaml_2 = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Templ
 
 
 @parameterized_class([
-   { 'yaml': yaml_0, 'expected': 0},
-   { 'yaml': yaml_2, 'expected': 2}
+   {'yaml': yaml_0, 'expected': 0},
+   {'yaml': yaml_2, 'expected': 2}
 ])
 class TestNSCMCount(unittest.TestCase):
 
     def setUp(self):
-        self.yaml = StringIO(self.yaml.expandtabs(2))
-
-    def tearDown(self):
-        self.yaml.close()
+        self.yaml = self.yaml.expandtabs(2)
 
     def test(self):
         self.assertEqual(NumSuspiciousComments(self.yaml).count(), self.expected)

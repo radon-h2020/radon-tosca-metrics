@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.metrics.num_properties import NumProperties
 
 
@@ -21,11 +20,8 @@ yaml_7 = 'tosca_definitions_version: tosca_simple_yaml_1_0\ntopology_template:\n
 ])
 class TestNumPropertiesCount(unittest.TestCase):
     def setUp(self):
-        self.yaml = StringIO(self.yaml.expandtabs(2))
+        self.yaml = self.yaml.expandtabs(2)
 
-    def tearDown(self):
-        self.yaml.close()
-    
     def test(self):
         self.assertEqual(NumProperties(self.yaml).count(), self.expected)
 
