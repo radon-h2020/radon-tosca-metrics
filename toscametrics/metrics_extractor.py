@@ -1,11 +1,10 @@
-from io import StringIO
-from .import_metrics import general_metrics #, tosca_metrics
+from .import_metrics import general_metrics, blueprint_metrics
 
 
 def extract_all(script: str):
 
     metrics = general_metrics
-    #blueprint.update(tosca_metrics)
+    metrics.update(blueprint_metrics)
 
     results = dict()
 
