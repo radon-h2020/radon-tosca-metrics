@@ -8,7 +8,7 @@ class NumProperties(BlueprintMetric):
     def count(self):
         properties = 0
         for key, value in key_value_list(self.blueprint):
-            if key == 'properties':
+            if key == 'properties' and type(value) in (list, dict):
                 properties += len(value)
 
         return properties

@@ -3,7 +3,8 @@ from parameterized import parameterized_class
 from toscametrics.blueprint.num_properties import NumProperties
 
 
-yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\nimports:\n  - paypalpizzastore_nodejs_app.yaml'
+yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_0\ntopology_template:\n\tnode_templates:\n\t\tmysql:\n\t\t' \
+         '\ttype: tosca.nodes.DBMS.MySQL\n\t\t\tproperties: 1'
 yaml_7 = 'tosca_definitions_version: tosca_simple_yaml_1_0\ntopology_template:\n\tnode_templates:\n\t\tmysql:\n\t\t' \
          '\ttype: tosca.nodes.DBMS.MySQL\n\t\t\tproperties:\n\t\t\t\troot_password: { get_input: my_mysql_rootpw ' \
          '}\n\t\t\t\tport: { get_input: my_mysql_port }\n\t\t\trequirements:\n\t\t\t\t- ' \
