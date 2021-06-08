@@ -9,14 +9,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='tosca-metrics',
-      version='0.0.8',
+      version='0.0.9',
       description='A module to extract metrics rom TOSCA blueprints',
       long_description=long_description,
       long_description_content_type="text/markdown",
       author='Stefano Dalla Palma',
       maintainer='Stefano Dalla Palma',
       author_email='stefano.dallapalma0@gmail.com',
-      packages=find_packages(exclude=('test',)),
+      packages=find_packages(exclude=('tests',)),
       entry_points = {
         'console_scripts': ['tosca-metrics=toscametrics.command_line:cli'],
       },
