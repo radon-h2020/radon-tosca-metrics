@@ -8,6 +8,7 @@ from toscametrics.general.num_tokens import NumTokens
 from toscametrics.general.text_entropy import TextEntropy
 
 # Blueprint blueprint
+from toscametrics.blueprint.num_capabilities import NumCapabilities
 from toscametrics.blueprint.num_imports import NumImports
 from toscametrics.blueprint.num_inputs import NumInputs
 from toscametrics.blueprint.num_interfaces import NumInterfaces
@@ -17,6 +18,7 @@ from toscametrics.blueprint.num_parameters import NumParameters
 from toscametrics.blueprint.num_properties import NumProperties
 from toscametrics.blueprint.num_relationship_templates import NumRelationshipTemplates
 from toscametrics.blueprint.num_relationship_types import NumRelationshipTypes
+from toscametrics.blueprint.num_requirements import NumRequirements
 from toscametrics.blueprint.num_shell_scripts import NumShellScripts
 
 general_metrics = {
@@ -30,6 +32,7 @@ general_metrics = {
 }
 
 blueprint_metrics = {
+    'num_capabilities': NumCapabilities,
     'num_imports': NumImports,
     'num_inputs': NumInputs,
     'num_interfaces': NumInterfaces,
