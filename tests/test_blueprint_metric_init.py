@@ -8,7 +8,7 @@ class TestBlueprintMetricInit(unittest.TestCase):
     def testInvalidBlueprint(self):
         with self.assertRaises(TypeError):
             BlueprintMetric(StringIO('- Hello\nWorld'))
-    
+
     def testEmptyBlueprint(self):
         with self.assertRaises(TypeError):
             BlueprintMetric(StringIO(''))

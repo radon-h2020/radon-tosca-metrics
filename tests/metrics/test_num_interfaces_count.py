@@ -1,6 +1,5 @@
 import unittest
 from parameterized import parameterized_class
-from io import StringIO
 from toscametrics.blueprint.num_interfaces import NumInterfaces
 
 
@@ -20,15 +19,12 @@ yaml_2 = 'tosca_definitions_version: tosca_simple_yaml_1_3\ntopology_template:\n
 
 
 @parameterized_class([
-   {'yaml': yaml_0, 'expected': 0},
-   {'yaml': yaml_2, 'expected': 2}
+    {'yaml': yaml_0, 'expected': 0},
+    {'yaml': yaml_2, 'expected': 2}
 ])
 class TestNumInterfacesCount(unittest.TestCase):
     def setUp(self):
-        self.blueprint = StringIO(self.yaml.expandtabs(2))
+        self.blueprint = self.yaml.expandtabs(2)
 
-    def tearDown(self):
-        self.blueprint.close()
-    
     def test(self):
         self.assertEqual(NumInterfaces(self.blueprint).count(), self.expected)

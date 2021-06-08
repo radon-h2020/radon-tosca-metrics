@@ -10,8 +10,8 @@ yaml_2_1 = '---\n- hosts: localhost\n\n\ttasks:\n\t- name: task 1    # This is t
 
 
 @parameterized_class([
-   { 'yaml': yaml_0_1, 'expected': 0},
-   { 'yaml': yaml_2_1, 'expected': 2}
+    {'yaml': yaml_0_1, 'expected': 0},
+    {'yaml': yaml_2_1, 'expected': 2}
 ])
 class TestLinesCommentCount(unittest.TestCase):
 

@@ -10,8 +10,8 @@ yaml_30_1 = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Te
 
 
 @parameterized_class([
-   {'yaml': yaml_12_1, 'expected': 12},
-   {'yaml': yaml_30_1, 'expected': 30}
+    {'yaml': yaml_12_1, 'expected': 12},
+    {'yaml': yaml_30_1, 'expected': 30}
 ])
 class TestNumTokensCount(unittest.TestCase):
 

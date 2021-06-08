@@ -16,8 +16,8 @@ yaml_7 = 'tosca_definitions_version: tosca_simple_yaml_1_0\ntopology_template:\n
 
 
 @parameterized_class([
-   {'yaml': yaml_0, 'expected': 0},
-   {'yaml': yaml_7, 'expected': 7}
+    {'yaml': yaml_0, 'expected': 0},
+    {'yaml': yaml_7, 'expected': 7}
 ])
 class TestNumPropertiesCount(unittest.TestCase):
     def setUp(self):
@@ -25,4 +25,3 @@ class TestNumPropertiesCount(unittest.TestCase):
 
     def test(self):
         self.assertEqual(NumProperties(self.yaml).count(), self.expected)
-

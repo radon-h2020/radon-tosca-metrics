@@ -10,8 +10,8 @@ yaml_2 = 'tosca_definitions_version: tosca_simple_yaml_1_0\ntopology_template:\n
 
 
 @parameterized_class([
-   {'yaml': yaml_0, 'expected': 0},
-   {'yaml': yaml_2, 'expected': 2}
+    {'yaml': yaml_0, 'expected': 0},
+    {'yaml': yaml_2, 'expected': 2}
 ])
 class TestNumRelationshipTypesCount(unittest.TestCase):
     def setUp(self):
@@ -19,5 +19,3 @@ class TestNumRelationshipTypesCount(unittest.TestCase):
 
     def test(self):
         self.assertEqual(NumRelationshipTypes(self.blueprint).count(), self.expected)
-
-

@@ -11,7 +11,7 @@ yaml_1 = 'tosca_definitions_version: tosca_simple_yaml_1_3\n\ndescription: Templ
 
 
 @parameterized_class([
-   {'yaml': yaml_1, 'expected': 1},
+    {'yaml': yaml_1, 'expected': 1},
 ])
 class TestNumShellScriptsCount(unittest.TestCase):
     def setUp(self):
@@ -21,4 +21,3 @@ class TestNumShellScriptsCount(unittest.TestCase):
         metric = NumShellScripts(self.yaml)
         count = metric.count()
         self.assertEqual(count, self.expected)
-

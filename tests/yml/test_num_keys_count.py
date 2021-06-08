@@ -13,8 +13,8 @@ yaml_19_1 = 'tosca_definitions_version: tosca_simple_yaml_1_0\n\ndescription: Te
 
 
 @parameterized_class([
-   { 'yaml': yaml_2_1, 'expected': 2},
-   { 'yaml': yaml_19_1, 'expected': 19}
+    {'yaml': yaml_2_1, 'expected': 2},
+    {'yaml': yaml_19_1, 'expected': 19}
 ])
 class TestNKEYSCount(unittest.TestCase):
 
