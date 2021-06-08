@@ -8,11 +8,9 @@ class NumSuspiciousComments(BlueprintMetric):
 
     def count(self):
         """ Return the number of suspicious comments in the script. """
-        content = StringIO(self.getStringIOobject)
-
         suspicious = 0
 
-        for l in content.getvalue().splitlines():            
+        for l in self.plain_blueprint.splitlines():
             comment = re.search(r'#.+', str(l.strip()))
             if comment is not None:   
                 if re.search(r'TODO|FIXME|HACK|XXX|CHECKME|DOCME|TESTME|PENDING', comment.group()) is not None:
