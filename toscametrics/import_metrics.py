@@ -42,5 +42,6 @@ blueprint_metrics = {
     'num_properties': NumProperties,
     'num_relationship_templates': NumRelationshipTemplates,
     'num_relationship_types': NumRelationshipTypes,
+    'num_requirements': NumRequirements,
     'num_shell_scripts': NumShellScripts
 }
