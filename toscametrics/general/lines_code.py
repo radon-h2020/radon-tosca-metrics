@@ -15,7 +15,7 @@ class LinesCode:
             self.__blueprint = yaml.safe_load(blueprint)
             if self.__blueprint is None:
                 raise TypeError("Expected a non-empty blueprint")
-            
+
             self.__blueprint = blueprint
 
         except yaml.YAMLError:
@@ -27,10 +27,10 @@ class LinesCode:
         """
         loc = 0
 
-        for l in self.__blueprint.splitlines():
-            if l.strip() and l.strip() != '---' and l.strip() != '-' and not l.strip().startswith('#'):
+        for line in self.__blueprint.splitlines():
+            if line.strip() and line.strip() != '---' and line.strip() != '-' and not line.strip().startswith('#'):
                 loc = loc + 1
-                
+
         return loc
 
     @property

@@ -32,9 +32,9 @@ def load_file(path: str) -> str:
 
 
 def load_dir(input_dir: str) -> dict:
-    """ 
+    """
     Find all yaml file in the input directory and return a dictionary of k:v pairs where k is the filepath and \
-        the v the content of the file at that path 
+    the v the content of the file at that path
     """
 
     dirs_stack = []
@@ -49,7 +49,7 @@ def load_dir(input_dir: str) -> dict:
 
         if os.path.isfile(item):
             _, file_extension = os.path.splitext(item)
-            
+
             if file_extension == 'tosca':
                 yml_files.append(item)
             elif file_extension in ('.yml', '.yaml'):

@@ -9,5 +9,5 @@ class NumImports(BlueprintMetric):
         imports = self.blueprint.get('imports', [])
         if type(imports) == list:
             return len(imports)
-        elif  type(imports) == dict:
+        elif type(imports) == dict:
             return 1

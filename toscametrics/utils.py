@@ -42,7 +42,7 @@ def all_values(blueprint: Union[dict, list]) -> list:
 
 
 def key_value_list(d):
-    """ 
+    """
     This function iterates over all the key-value pairs of a dictionary and returns a list of tuple (key, value).
     d -- a dictionary to iterate through
     """

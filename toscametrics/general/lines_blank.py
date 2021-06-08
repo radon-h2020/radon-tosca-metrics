@@ -7,8 +7,8 @@ class LinesBlank(LinesCode):
     def count(self):
         bloc = 0
 
-        for l in self.blueprint.splitlines():
-            if not l.strip():
+        for line in self.blueprint.splitlines():
+            if not line.strip():
                 bloc = bloc + 1
 
         return bloc

@@ -6,7 +6,7 @@ from toscametrics.blueprint_metric import BlueprintMetric
 
 class NumTokens(BlueprintMetric):
     """ This class counts the blueprint's number of tokens. """
-    
+
     def count(self):
         keys = len(utils.all_keys(self.blueprint))
         values = utils.all_values(self.blueprint)

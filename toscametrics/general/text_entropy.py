@@ -5,6 +5,10 @@ from toscametrics import utils
 from toscametrics.blueprint_metric import BlueprintMetric
 
 
+def splitter(x):
+    return re.sub(r'\s+', ' ', str(x)).split(' ')
+
+
 class TextEntropy(BlueprintMetric):
     """ This class measures the blueprint's Shannon entropy for keywords frequencies """
 
@@ -12,7 +16,6 @@ class TextEntropy(BlueprintMetric):
         words_list = utils.all_keys(self.blueprint)
         words_list.extend(utils.all_values(self.blueprint))
 
-        splitter = lambda x: re.sub(r'\s+', ' ', str(x)).split(' ')
         words_list = [item for sublist in list(map(splitter, words_list)) for item in sublist]
 
         words_set = set(words_list)
