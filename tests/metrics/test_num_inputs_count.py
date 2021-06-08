@@ -6,7 +6,8 @@ from toscametrics.blueprint.num_inputs import NumInputs
 
 yaml_0 = 'tosca_definitions_version: tosca_simple_yaml_1_2\n\ndescription: Template for deploying a single server ' \
          'with MySQL software on top.\n\ntopology_template:\n  node_templates:\n    db_server:\n      type: ' \
-         'tosca.nodes.Compute\n\n    mysql:\n      type: tosca.nodes.DBMS.MySQL '
+         'tosca.nodes.Compute\n\n    mysql:\n      type: tosca.nodes.DBMS.MySQL'
+
 yaml_6 = 'tosca_definitions_version: tosca_simple_yaml_1_3\ntopology_template:\n\tnode_templates:\n\t\twordpress:\n\t' \
          '\t\ttype: tosca.nodes.WebApplication.WordPress\n\t\t\tproperties:\n\t\t\t\tadmin_user: { get_input: ' \
          'wp_admin_username }\n\t\t\t\tadmin_password: { get_input: wp_admin_password }\n\t\t\t\tdb_host: { ' \

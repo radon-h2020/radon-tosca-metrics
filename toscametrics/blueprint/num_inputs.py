@@ -17,6 +17,7 @@ class NumInputs(BlueprintMetric):
 
             if key in ('interfaces', 'operations'):
                 for interface, items in value.items():
-                    params += len(items.get('inputs', dict()))
+                    if type(items) == dict:
+                        params += len(items.get('inputs', dict()))
 
         return params
