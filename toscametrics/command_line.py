@@ -5,7 +5,7 @@ import yaml
 
 from toscametrics.metrics_extractor import extract_all
 
-VERSION = '0.0.9'
+VERSION = '0.0.10'
 
 
 def get_parser():
