@@ -29,5 +29,6 @@ setup(name='tosca-metrics',
           "Topic :: Software Development :: Libraries :: Python Modules",
           "Operating System :: OS Independent"
       ],
-      insall_requires=requirements)
+      install_requires=requirements
+)
 
