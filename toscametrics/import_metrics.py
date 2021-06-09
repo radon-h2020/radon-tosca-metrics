@@ -8,13 +8,18 @@ from toscametrics.general.num_tokens import NumTokens
 from toscametrics.general.text_entropy import TextEntropy
 
 # Blueprint blueprint
+from toscametrics.blueprint.num_artifact_types import NumArtifactTypes
 from toscametrics.blueprint.num_capabilities import NumCapabilities
+from toscametrics.blueprint.num_capability_types import NumCapabilityTypes
+from toscametrics.blueprint.num_data_types import NumDataTypes
+from toscametrics.blueprint.num_group_types import NumGroupTypes
 from toscametrics.blueprint.num_imports import NumImports
 from toscametrics.blueprint.num_inputs import NumInputs
 from toscametrics.blueprint.num_interfaces import NumInterfaces
 from toscametrics.blueprint.num_node_templates import NumNodeTemplates
 from toscametrics.blueprint.num_node_types import NumNodeTypes
 from toscametrics.blueprint.num_parameters import NumParameters
+from toscametrics.blueprint.num_policy_types import NumPolicyTypes
 from toscametrics.blueprint.num_properties import NumProperties
 from toscametrics.blueprint.num_relationship_templates import NumRelationshipTemplates
 from toscametrics.blueprint.num_relationship_types import NumRelationshipTypes
@@ -32,13 +37,18 @@ general_metrics = {
 }
 
 blueprint_metrics = {
+    'num_artifact_types': NumArtifactTypes,
     'num_capabilities': NumCapabilities,
+    'num_capability_types': NumCapabilityTypes,
+    'num_data_types': NumDataTypes,
+    'num_group_types': NumGroupTypes,
     'num_imports': NumImports,
     'num_inputs': NumInputs,
     'num_interfaces': NumInterfaces,
     'num_node_templates': NumNodeTemplates,
     'num_node_types': NumNodeTypes,
     'num_parameters': NumParameters,
+    'num_policy_types': NumPolicyTypes,
     'num_properties': NumProperties,
     'num_relationship_templates': NumRelationshipTemplates,
     'num_relationship_types': NumRelationshipTypes,
