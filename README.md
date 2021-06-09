@@ -2,6 +2,7 @@
 <p align="center">
 <a><img alt="Build Status" src="https://github.com/radon-h2020/radon-tosca-metrics/workflows/Build/badge.svg"></a>
 <a><img alt="LGTM Grade" src="https://img.shields.io/lgtm/grade/python/github/radon-h2020/radon-tosca-metrics"></a>
+<a><img alt="Codecov coverage" src="https://img.shields.io/codecov/c/github/radon-h2020/radon-tosca-metrics"></a>
 <a><img alt="pypi-version" src="https://img.shields.io/pypi/v/tosca-metrics"></a>
 <a><img alt="python-version" src="https://img.shields.io/pypi/pyversions/tosca-metrics"></a>
 </p>
