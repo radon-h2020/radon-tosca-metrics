@@ -8,6 +8,7 @@ from toscametrics.general.num_tokens import NumTokens
 from toscametrics.general.text_entropy import TextEntropy
 
 # Blueprint blueprint
+from toscametrics.blueprint.avg_workflow_size import AvgWorkflowSize
 from toscametrics.blueprint.num_artifact_types import NumArtifactTypes
 from toscametrics.blueprint.num_capabilities import NumCapabilities
 from toscametrics.blueprint.num_capability_types import NumCapabilityTypes
@@ -25,6 +26,7 @@ from toscametrics.blueprint.num_relationship_templates import NumRelationshipTem
 from toscametrics.blueprint.num_relationship_types import NumRelationshipTypes
 from toscametrics.blueprint.num_requirements import NumRequirements
 from toscametrics.blueprint.num_shell_scripts import NumShellScripts
+from toscametrics.blueprint.num_workflows import NumWorkflows
 
 general_metrics = {
     'lines_code': LinesCode,
@@ -37,6 +39,7 @@ general_metrics = {
 }
 
 blueprint_metrics = {
+    'avg_workflow_size': AvgWorkflowSize,
     'num_artifact_types': NumArtifactTypes,
     'num_capabilities': NumCapabilities,
     'num_capability_types': NumCapabilityTypes,
@@ -53,5 +56,6 @@ blueprint_metrics = {
     'num_relationship_templates': NumRelationshipTemplates,
     'num_relationship_types': NumRelationshipTypes,
     'num_requirements': NumRequirements,
-    'num_shell_scripts': NumShellScripts
+    'num_shell_scripts': NumShellScripts,
+    'num_workflows': NumWorkflows
 }
