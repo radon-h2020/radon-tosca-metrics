@@ -9,6 +9,7 @@ from toscametrics.general.text_entropy import TextEntropy
 
 # Blueprint blueprint
 from toscametrics.blueprint.avg_workflow_size import AvgWorkflowSize
+from toscametrics.blueprint.lcot import LCOT
 from toscametrics.blueprint.num_artifact_types import NumArtifactTypes
 from toscametrics.blueprint.num_capabilities import NumCapabilities
 from toscametrics.blueprint.num_capability_types import NumCapabilityTypes
@@ -40,6 +41,7 @@ general_metrics = {
 
 blueprint_metrics = {
     'avg_workflow_size': AvgWorkflowSize,
+    'lcot': LCOT,
     'num_artifact_types': NumArtifactTypes,
     'num_capabilities': NumCapabilities,
     'num_capability_types': NumCapabilityTypes,
